@@ -1,3 +1,4 @@
+using Core.Interfaces;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -21,6 +22,9 @@ namespace API
 
             services.AddControllers();
             services.AddDbContext<StoreContext>(x => x.UseSqlite(_configuration.GetConnectionString("Default")));
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<ITypeRepository, TypeRepository>();
+            services.AddScoped<IBrandRepository, BrandRepository>();
             
             services.AddSwaggerGen(c =>
             {

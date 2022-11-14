@@ -78,3 +78,4 @@ C:\Users\charl\examProject\API\bin\Debug\net6.0\Infrastructure.dll
 C:\Users\charl\examProject\API\bin\Debug\net6.0\Infrastructure.pdb
 C:\Users\charl\examProject\API\bin\Debug\net6.0\Application.pdb
 C:\Users\charl\examProject\API\bin\Debug\net6.0\Core.pdb
+C:\Users\charl\examProject\API\bin\Debug\net6.0\API.staticwebassets.runtime.json
