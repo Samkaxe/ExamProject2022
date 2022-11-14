@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\charl\\examProject\\api\\API.csproj": {}
+    "C:\\Users\\charl\\examProject\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\charl\\examProject\\api\\API.csproj": {
+    "C:\\Users\\charl\\examProject\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\charl\\examProject\\api\\API.csproj",
+        "projectUniqueName": "C:\\Users\\charl\\examProject\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\charl\\examProject\\api\\API.csproj",
+        "projectPath": "C:\\Users\\charl\\examProject\\API\\API.csproj",
         "packagesPath": "C:\\Users\\charl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\charl\\examProject\\api\\obj\\",
+        "outputPath": "C:\\Users\\charl\\examProject\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\charl\\AppData\\Roaming\\NuGet\\NuGet.Config",

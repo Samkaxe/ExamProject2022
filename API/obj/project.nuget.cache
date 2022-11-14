@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Zd2Gtny6GyUc71cS2qQzbVSRy5QaWT/q7Tu6OkKdqlGw7Y6m8HIuK7zfHEwFl3YLN3as7TmFO5JOK3YtTTXswA==",
+  "dgSpecHash": "RXktWbX8pGvqOl/bNarQFPgn49GmfHnV0h5rnCiouyiTFHGabseseXxjWdhnJEoVNYcOxHm7qrKN+99YefbJIQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\charl\\examProject\\api\\API.csproj",
+  "projectFilePath": "C:\\Users\\charl\\examProject\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\charl\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\charl\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.0\\microsoft.data.sqlite.core.7.0.0.nupkg.sha512",
