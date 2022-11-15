@@ -1,3 +1,5 @@
+using Application.Interfaces;
+using Application.Services;
 using Core.Interfaces;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +25,7 @@ namespace API
             services.AddControllers();
             services.AddDbContext<StoreContext>(x => x.UseSqlite(_configuration.GetConnectionString("Default")));
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IProductService, ProductService>();
             services.AddScoped<ITypeRepository, TypeRepository>();
             services.AddScoped<IBrandRepository, BrandRepository>();
             

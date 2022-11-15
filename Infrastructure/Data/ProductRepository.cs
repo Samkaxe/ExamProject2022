@@ -28,4 +28,26 @@ public class ProductRepository : IProductRepository
             .Include(p => p.ProductBrand)
             .ToListAsync();
     }
+
+    public Product CreateNewProduct(Product product)
+    {
+        _context.Products.Add(product);
+        _context.SaveChanges();
+        return product;
+    }
+
+    public Product UpdateProduct(Product product)
+    {
+        _context.Products.Update(product);
+        _context.SaveChanges();
+        return product;
+    }
+
+    public Product DeleteProduct(int id)
+    {
+        var productToDelete = _context.Products.Find(id) ?? throw new KeyNotFoundException();
+        _context.Products.Remove(productToDelete);
+        _context.SaveChanges();
+        return productToDelete;
+    }
 }
