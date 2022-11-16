@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qnOEqmF3+TVPfcvU96DWN8Oqt4f2gN1foewAGPnuiG4=",
+  "Hash": "v6qTw4vjpuIgH6rEVCaEsaC0rOoEcxm/QhPsabzCUfk=",
   "Source": "API",
   "BasePath": "_content/API",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "API\\wwwroot",
       "Source": "API",
-      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\200w.gif",
+      "Identity": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\200w.gif",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/products/200w.gif",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\200w.gif"
     },
     {
-      "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\acana-grass-fed-lamb-66849_940x.jpg",
+      "Identity": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\acana-grass-fed-lamb-66849_940x.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/products/acana-grass-fed-lamb-66849_940x.jpg",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\acana-grass-fed-lamb-66849_940x.jpg"
     },
     {
-      "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\acana-puppy-large-breed-hundefoder.jpg",
+      "Identity": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\acana-puppy-large-breed-hundefoder.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/products/acana-puppy-large-breed-hundefoder.jpg",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\acana-puppy-large-breed-hundefoder.jpg"
     },
     {
-      "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\AcanaToy.jpg",
+      "Identity": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\AcanaToy.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/products/AcanaToy.jpg",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\AcanaToy.jpg"
     },
     {
-      "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\acanatoy1.jpg",
+      "Identity": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\acanatoy1.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/products/acanatoy1.jpg",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\acanatoy1.jpg"
     },
     {
-      "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\belcandoBed.jpg",
+      "Identity": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\belcandoBed.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/products/belcandoBed.jpg",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\belcandoBed.jpg"
     },
     {
-      "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\belcandoToy1.jpg",
+      "Identity": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\belcandoToy1.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/products/belcandoToy1.jpg",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\belcandoToy1.jpg"
     },
     {
-      "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\belcandoToy2.jpg",
+      "Identity": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\belcandoToy2.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/products/belcandoToy2.jpg",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\belcandoToy2.jpg"
     },
     {
-      "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\belcanofood1.jpg",
+      "Identity": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\belcanofood1.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/products/belcanofood1.jpg",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\belcanofood1.jpg"
     },
     {
-      "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\belcanoFood2.jpg",
+      "Identity": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\belcanoFood2.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/products/belcanoFood2.jpg",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\belcanoFood2.jpg"
     },
     {
-      "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\checkup.jpg",
+      "Identity": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\checkup.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/products/checkup.jpg",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\checkup.jpg"
     },
     {
-      "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\dogcage.jpg",
+      "Identity": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\dogcage.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/products/dogcage.jpg",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\dogcage.jpg"
     },
     {
-      "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\KongBelt1.jpg",
+      "Identity": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\KongBelt1.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/products/KongBelt1.jpg",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\KongBelt1.jpg"
     },
     {
-      "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\Kongbelt2.jpg",
+      "Identity": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\Kongbelt2.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/products/Kongbelt2.jpg",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\Kongbelt2.jpg"
     },
     {
-      "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\medic1.jpg",
+      "Identity": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\medic1.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/products/medic1.jpg",
       "AssetKind": "All",
@@ -272,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\medic1.jpg"
     },
     {
-      "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\medic2.jpg",
+      "Identity": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\medic2.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/products/medic2.jpg",
       "AssetKind": "All",
@@ -289,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\medic2.jpg"
     },
     {
-      "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\medic3.jpg",
+      "Identity": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\medic3.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/products/medic3.jpg",
       "AssetKind": "All",
@@ -306,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\medic3.jpg"
     },
     {
-      "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\placeholder.png",
+      "Identity": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\placeholder.png",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/products/placeholder.png",
       "AssetKind": "All",
