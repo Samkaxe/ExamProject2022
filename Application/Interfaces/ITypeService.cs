@@ -1,6 +1,12 @@
-﻿namespace Application.Interfaces;
+﻿using Application.DTOs;
+using Core.Entities;
 
-public class ITypeService
+namespace Application.Interfaces;
+
+public interface ITypeService
 {
+    Task<IReadOnlyList<ProductType>> GetAllTypes();
     
+    Task<ProductType> GetTypeById(int id);
+      
 }

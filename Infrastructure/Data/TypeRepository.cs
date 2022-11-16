@@ -17,4 +17,9 @@ public class TypeRepository : ITypeRepository
     {
         return await _context.ProductTypes.ToListAsync();
     }
+
+    public async Task<ProductType> GetProductTypeByIdAsync(int id)
+    {
+        return await _context.ProductTypes.FirstOrDefaultAsync(p => p.Id == id);
+    }
 }

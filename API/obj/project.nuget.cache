@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Yg2ZeWRiJuc6VinsW55LHK+4/eCE8pcBDvxb9E2bGWi+u8vB/IzFz5O/P8bE8mAq9YW9PWFhN1a9LyUzjueolw==",
+  "dgSpecHash": "YpoLlD9otf9n8U1vDe7Ossty9cNHlZA1WiMbofqqqdDKsiPZdLgKJml37RpmftLfQhzhgrw3E1BP2EKKEbTSig==",
   "success": true,
-  "projectFilePath": "C:\\Users\\charl\\examProject\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\charl\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\charl\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\charl\\.nuget\\packages\\fluentvalidation\\11.3.0\\fluentvalidation.11.3.0.nupkg.sha512",
+    "C:\\Users\\charl\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.3.0\\fluentvalidation.dependencyinjectionextensions.11.3.0.nupkg.sha512",
     "C:\\Users\\charl\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\charl\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\charl\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.0\\microsoft.data.sqlite.core.7.0.0.nupkg.sha512",

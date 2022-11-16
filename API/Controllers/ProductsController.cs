@@ -1,5 +1,6 @@
 ﻿using Application.DTOs;
 using Application.Interfaces;
+using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
 using FluentValidation;
@@ -14,11 +15,13 @@ namespace API.Controllers;
 public class ProductsController : ControllerBase
 {
     private readonly IProductService _service;
+    private readonly IMapper _mapper;
 
 
-    public ProductsController(IProductService service)
+    public ProductsController(IProductService service , IMapper mapper)
     {
         _service = service;
+        _mapper = mapper;
     }
 
     [HttpGet]
@@ -45,8 +48,9 @@ public class ProductsController : ControllerBase
     {
         try
         {
-            var result = _service.CreateNewProduct(dto);
-            return Created("", result);
+     
+           var result =  _service.CreateNewProduct(dto);
+            return Ok(result);
         }
         catch (ValidationException v)
         {

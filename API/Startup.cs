@@ -1,6 +1,8 @@
+using API.Mapper;
 using Application.Interfaces;
 using Application.Services;
 using Core.Interfaces;
+using FluentValidation;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -21,13 +23,20 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddAutoMapper(typeof(MappingProfile));
+            
             services.AddControllers();
             services.AddDbContext<StoreContext>(x => x.UseSqlite(_configuration.GetConnectionString("Default")));
+            
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IProductService, ProductService>();
+            
             services.AddScoped<ITypeRepository, TypeRepository>();
+            services.AddScoped<ITypeService, ProductTypeService>();
+            
             services.AddScoped<IBrandRepository, BrandRepository>();
+            services.AddScoped<IBrandService, ProductBrandService>();
             
             services.AddSwaggerGen(c =>
             {

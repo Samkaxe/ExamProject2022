@@ -3,6 +3,7 @@ using Application.DTOs;
 using Application.Interfaces;
 using AutoMapper;
 using Core.Entities;
+using Core.Interfaces;
 using FluentValidation;
 using Infrastructure.Data;
 using ValidationException = FluentValidation.ValidationException;
@@ -11,12 +12,17 @@ namespace Application.Services;
 
 public class ProductService : IProductService
 {
-    private readonly ProductRepository _repository;
+    private readonly IProductRepository _repository;
     private readonly IValidator<ProductToCreateDTO> _postValidator;
     private readonly IValidator<Product> _productValidator;
     private readonly IMapper _mapper;
 
-    public ProductService(ProductRepository repository,IValidator<ProductToCreateDTO> postValidator , IValidator<Product> productValidator, IMapper mapper )
+    public ProductService(
+        IProductRepository repository,
+        IMapper mapper, 
+        IValidator<ProductToCreateDTO> postValidator,
+        IValidator<Product> productValidator
+        )
     {
         _repository = repository;
         _mapper = mapper;
@@ -31,12 +37,23 @@ public class ProductService : IProductService
 
     public Product CreateNewProduct(ProductToCreateDTO dto)
     {
-        var validation = _postValidator.Validate(dto);
-        if (!validation.IsValid)
-            throw new ValidationException(validation.ToString());
+        try
+        {
+            //var product = _mapper.Map<ProductToCreateDTO, Product>(dto);
 
-        return _repository.CreateNewProduct(_mapper.Map<Product>(dto));
-        
+            var validation = _postValidator.Validate(dto);
+            if (!validation.IsValid)
+                throw new ValidationException("line 32 method create new product in product service ");
+
+            return _repository.CreateNewProduct(_mapper.Map<Product>(dto));
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.ToString());
+        }
+
+        throw new Exception();
+
     }
 
     public async Task<Product> GetProductById(int id)
