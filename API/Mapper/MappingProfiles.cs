@@ -1,14 +1,15 @@
 ﻿using Application.DTOs;
+using Application.Models;
 using AutoMapper;
 using Core.Entities;
 
 namespace API.Mapper;
 
-public class MappingProfile : Profile
+public class MappingProfiles : Profile
 {
-    public MappingProfile()
+    public MappingProfiles()
     {
-        CreateMap<Product, ProductToReturnDTO>()
+        CreateMap<ProductModel, ProductToReturnDto>()
             .ForMember(d => d.ProductBrand, o => o.MapFrom(s => s.ProductBrand.Name))
             .ForMember(d => d.ProductType, o => o.MapFrom(s => s.ProductType.Name))
             .ForMember(d => d.PictureUrl, o => o.MapFrom<ProductUrlResolver>());

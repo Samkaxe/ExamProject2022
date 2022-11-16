@@ -1,5 +1,6 @@
 ﻿using Application.DTOs;
 using Application.Interfaces;
+using Application.Models;
 using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
@@ -25,9 +26,11 @@ public class ProductsController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<List<Product>>> GetProducts()
+    public async Task<ActionResult<List<ProductToReturnDto>>> GetProducts()
     {
         var products = await _service.GetAllProducts();
+        var data = _mapper
+            .Map<IReadOnlyList<ProductModel>, IReadOnlyList<ProductToReturnDto>>(products);
 
         return Ok(products);
     }

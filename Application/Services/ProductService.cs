@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Application.DTOs;
 using Application.Interfaces;
+using Application.Mapper;
+using Application.Models;
 using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
@@ -30,9 +32,11 @@ public class ProductService : IProductService
         _productValidator = productValidator;
     }
 
-    public async Task<IReadOnlyList<Product>> GetAllProducts()
+    public async Task<IReadOnlyList<ProductModel>> GetAllProducts()
     {
-        return await _repository.GetProductsAsync();
+        var products = await _repository.GetProductsAsync();
+        
+        return ObjectMapper.Mapper.Map<IReadOnlyList<ProductModel>>(products);
     }
 
     public Product CreateNewProduct(ProductToCreateDTO dto)

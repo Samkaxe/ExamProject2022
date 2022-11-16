@@ -23,8 +23,10 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(typeof(MappingProfiles));
+            
             services.AddValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
-            services.AddAutoMapper(typeof(MappingProfile));
+            
             
             services.AddControllers();
             services.AddDbContext<StoreContext>(x => x.UseSqlite(_configuration.GetConnectionString("Default")));
@@ -57,6 +59,7 @@ namespace API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseStaticFiles();
 
             app.UseAuthorization();
 
