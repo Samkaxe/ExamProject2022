@@ -1,3 +1,4 @@
+using API.Extensions;
 using API.Mapper;
 using Application.Interfaces;
 using Application.Services;
@@ -24,21 +25,11 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper(typeof(MappingProfiles));
-            
             services.AddValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
-            
+            services.AddApplicationServices();
             
             services.AddControllers();
             services.AddDbContext<StoreContext>(x => x.UseSqlite(_configuration.GetConnectionString("Default")));
-            
-            services.AddScoped<IProductRepository, ProductRepository>();
-            services.AddScoped<IProductService, ProductService>();
-            
-            services.AddScoped<ITypeRepository, TypeRepository>();
-            services.AddScoped<ITypeService, ProductTypeService>();
-            
-            services.AddScoped<IBrandRepository, BrandRepository>();
-            services.AddScoped<IBrandService, ProductBrandService>();
             
             services.AddSwaggerGen(c =>
             {

@@ -6,7 +6,7 @@ namespace Application.Interfaces;
 
 public interface IProductService
 {
-     Task<IReadOnlyList<ProductModel>> GetAllProducts();
+     Task<IReadOnlyList<Product>> GetAllProducts();
      Product CreateNewProduct(ProductToCreateDTO dto);
      Task<Product> GetProductById(int id);
      Product UpdateProduct(int id, Product product);

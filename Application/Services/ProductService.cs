@@ -32,11 +32,17 @@ public class ProductService : IProductService
         _productValidator = productValidator;
     }
 
-    public async Task<IReadOnlyList<ProductModel>> GetAllProducts()
+    public async Task<IReadOnlyList<Product>> GetAllProducts()
     {
         var products = await _repository.GetProductsAsync();
         
-        return ObjectMapper.Mapper.Map<IReadOnlyList<ProductModel>>(products);
+        return ObjectMapper.Mapper.Map<IReadOnlyList<Product>>(products);
+    }
+    
+    public async Task<Product> GetProductById(int id)
+    {
+        var product = await _repository.GetProductByIdAsync(id);
+        return ObjectMapper.Mapper.Map<Product>(product);
     }
 
     public Product CreateNewProduct(ProductToCreateDTO dto)
@@ -59,12 +65,7 @@ public class ProductService : IProductService
         throw new Exception();
 
     }
-
-    public async Task<Product> GetProductById(int id)
-    {
-        return await _repository.GetProductByIdAsync(id);
-    }
-
+    
     public Product UpdateProduct(int id, Product product)
     {
         if (id != product.Id)

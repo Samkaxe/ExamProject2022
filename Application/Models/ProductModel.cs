@@ -13,4 +13,5 @@ public class ProductModel: BaseModel
     public int ProductTypeId { get; set; }
     public ProductBrandModel ProductBrand { get; set; }
     public int ProductBrandId { get; set; }
+    
 }
