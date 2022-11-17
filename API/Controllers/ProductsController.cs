@@ -1,5 +1,6 @@
 ﻿using Application.DTOs;
 using Application.Interfaces;
+using Application.Models;
 using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
@@ -10,9 +11,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
 
-[ApiController]
-[Route("api/[controller]")]
-public class ProductsController : ControllerBase
+
+public class ProductsController :BaseApiController
 {
     private readonly IProductService _service;
     private readonly IMapper _mapper;
@@ -25,11 +25,13 @@ public class ProductsController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<List<Product>>> GetProducts()
+    public async Task<ActionResult<List<ProductToReturnDto>>> GetProducts()
     {
         var products = await _service.GetAllProducts();
+        var data = _mapper
+            .Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products);
 
-        return Ok(products);
+        return Ok(data);
     }
 
     [HttpGet("{id}")]
@@ -37,7 +39,9 @@ public class ProductsController : ControllerBase
     {
         try
         {
-            return await _service.GetProductById(id);
+            var product = await _service.GetProductById(id);
+            return  Ok(_mapper.Map<Product, ProductToReturnDto>(product));
+            
         }
         catch (KeyNotFoundException e) { return NotFound("No product found at ID " + id); }
         catch (Exception e) { return StatusCode(500, e.ToString()); }
@@ -48,8 +52,8 @@ public class ProductsController : ControllerBase
     {
         try
         {
-     
-           var result =  _service.CreateNewProduct(dto);
+            var product = _mapper.Map<ProductToCreateDTO, Product>(dto);
+            var result =  _service.CreateNewProduct(dto);
             return Ok(result);
         }
         catch (ValidationException v)

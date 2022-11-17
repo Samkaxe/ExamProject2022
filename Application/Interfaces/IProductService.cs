@@ -1,4 +1,5 @@
 ﻿using Application.DTOs;
+using Application.Models;
 using Core.Entities;
 
 namespace Application.Interfaces;

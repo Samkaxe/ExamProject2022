@@ -5,9 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
 
-[ApiController]
-[Route("api/[controller]")]
-public class BrandsController :ControllerBase
+
+public class BrandsController :BaseApiController
 {
     private readonly IBrandService _service;
     

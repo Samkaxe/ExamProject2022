@@ -9,7 +9,6 @@
       "API/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
-          "AutoMapper": "12.0.0",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
           "FluentValidation.DependencyInjectionExtensions": "11.3.0",
           "Infrastructure": "1.0.0",
@@ -515,6 +514,7 @@
       "Application/1.0.0": {
         "dependencies": {
           "AutoMapper": "12.0.0",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
           "Core": "1.0.0",
           "FluentValidation": "11.3.0",
           "Infrastructure": "1.0.0",

@@ -621,6 +621,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "AutoMapper": "12.0.0",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
           "Core": "1.0.0",
           "FluentValidation": "11.3.0",
           "Infrastructure": "1.0.0",
@@ -1668,7 +1669,6 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Application >= 1.0.0",
-      "AutoMapper >= 12.0.0",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.0",
       "FluentValidation.DependencyInjectionExtensions >= 11.3.0",
       "Infrastructure >= 1.0.0",
@@ -1682,30 +1682,32 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\charl\\examProject\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\API.csproj",
+      "projectPath": "C:\\Users\\charl\\examProject\\API\\API.csproj",
       "packagesPath": "C:\\Users\\charl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\API\\obj\\",
+      "outputPath": "C:\\Users\\charl\\examProject\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\charl\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\charl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\Application\\Application.csproj"
+            "C:\\Users\\charl\\examProject\\Application\\Application.csproj": {
+              "projectPath": "C:\\Users\\charl\\examProject\\Application\\Application.csproj"
             },
-            "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\charl\\Documents\\GitHub\\ExamProject2022\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\charl\\examProject\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\charl\\examProject\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
@@ -1720,10 +1722,6 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
-          "AutoMapper": {
-            "target": "Package",
-            "version": "[12.0.0, )"
-          },
           "AutoMapper.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
             "version": "[12.0.0, )"
@@ -1762,7 +1760,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

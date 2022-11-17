@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Application.DTOs;
 using Application.Interfaces;
+using Application.Mapper;
+using Application.Models;
 using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
@@ -32,7 +34,15 @@ public class ProductService : IProductService
 
     public async Task<IReadOnlyList<Product>> GetAllProducts()
     {
-        return await _repository.GetProductsAsync();
+        var products = await _repository.GetProductsAsync();
+        
+        return ObjectMapper.Mapper.Map<IReadOnlyList<Product>>(products);
+    }
+    
+    public async Task<Product> GetProductById(int id)
+    {
+        var product = await _repository.GetProductByIdAsync(id);
+        return ObjectMapper.Mapper.Map<Product>(product);
     }
 
     public Product CreateNewProduct(ProductToCreateDTO dto)
@@ -55,12 +65,7 @@ public class ProductService : IProductService
         throw new Exception();
 
     }
-
-    public async Task<Product> GetProductById(int id)
-    {
-        return await _repository.GetProductByIdAsync(id);
-    }
-
+    
     public Product UpdateProduct(int id, Product product)
     {
         if (id != product.Id)

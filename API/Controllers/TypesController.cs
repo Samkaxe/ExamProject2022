@@ -5,9 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
 
-[ApiController]
-[Route("api/[controller]")]
-public class TypesController :ControllerBase
+
+public class TypesController :BaseApiController
 {
     private readonly ITypeService _service;
 
