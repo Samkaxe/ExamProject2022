@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdminComponent } from '../admin.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
+import {AdminComponent} from "./admin.component";
+import {SharedModule} from "../shared/shared.module";
+import {AdminRoutingModule} from "./admin-routing.module";
 
 
 
@@ -11,7 +13,12 @@ import { EditProductComponent } from './edit-product/edit-product.component';
     EditProductComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule,
+    AdminRoutingModule
+  ],
+  exports : [
+    AdminComponent
   ]
 })
 export class AdminModule { }

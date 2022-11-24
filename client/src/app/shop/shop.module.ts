@@ -4,6 +4,8 @@ import {SearchPipe, ShopComponent} from './shop.component';
 import { ProductItemComponent } from './product-item/product-item.component';
 import {FormsModule} from "@angular/forms";
 import {BrowserModule} from "@angular/platform-browser";
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import {RouterModule} from "@angular/router";
 
 
 
@@ -11,7 +13,8 @@ import {BrowserModule} from "@angular/platform-browser";
     declarations: [
         ShopComponent,
         ProductItemComponent,
-      SearchPipe
+      SearchPipe,
+      ProductDetailsComponent
     ],
     exports: [
         ShopComponent
@@ -19,7 +22,8 @@ import {BrowserModule} from "@angular/platform-browser";
     imports: [
         CommonModule,
         FormsModule,
-      BrowserModule
+        BrowserModule,
+        RouterModule
     ]
 })
 export class ShopModule { }
