@@ -7,10 +7,12 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import {CoreModule} from "./core/core.module";
 import {ShopModule} from "./shop/shop.module";
+import { EditProductComponent } from './edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    EditProductComponent,
 
   ],
   imports: [
