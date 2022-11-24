@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {IProduct} from "./shared/models/product";
+
 
 @Component({
   selector: 'app-root',
@@ -8,17 +10,11 @@ import {HttpClient} from "@angular/common/http";
 })
 export class AppComponent implements OnInit{
   title = 'Exam Project';
-  products: any[];
+  products: IProduct[];
 
 
-  constructor(private http : HttpClient) {}
+  constructor() {}
 
   ngOnInit(): void {
-    this.http.get("https://localhost:5001/api/Products").subscribe((response: any) => {
-      this.products = response;
-     // console.log(response);
-    } , error => {
-      console.log(error)
-    })
   }
 }
