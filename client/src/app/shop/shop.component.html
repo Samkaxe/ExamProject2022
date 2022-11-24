@@ -23,18 +23,16 @@
         <span>Showing <strong>10</strong> of <strong>16 result</strong></span>
       </header>
         <div class="form-inline mt-2">
-          <input class="form-control mr-2" style="width: 300px" placeholder="Search"
-          type="text">
-          <button class="btn btn-outline-primary my-2">Search</button>
+          <input name="searchInput" [(ngModel)]="searchInput" type="text"  placeholder="Search here" size="50" >
           <button class="btn btn-outline-success ml-2 my-2">Reset</button>
         </div>
       </div>
 
       <div class="row">
-      <div class="col-4" *ngFor="let item of products">
-        <app-product-item [product]="item"></app-product-item>
+      <div class="col-4" *ngFor="let item of products | search : searchInput ">
+          <app-product-item [product]="item"></app-product-item>
       </div>
-      </div>
+        </div>
     </section>
   </div>
 </div>

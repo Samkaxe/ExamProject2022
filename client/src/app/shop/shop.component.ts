@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {IProduct} from "../shared/models/product";
 import {ShopService} from "./shop.service";
 import {IBrand} from "../shared/models/brand";
 import {IType} from "../shared/models/productType";
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Component({
   selector: 'app-shop',
@@ -13,6 +14,11 @@ export class ShopComponent implements OnInit {
   products : IProduct[];
   brands : IBrand[];
   types : IType[];
+  public searchInput: string;
+
+  @Output()
+  searchTextChanged : EventEmitter<string> = new EventEmitter<string>();
+
   constructor(private shopService : ShopService) { }
 
   ngOnInit(): void {
@@ -45,4 +51,29 @@ export class ShopComponent implements OnInit {
     });
   }
 
+
+
+  toggleExpand(product : any) {
+    product.expanded = !product.expanded;
+  }
+}
+
+@Pipe({
+  name:'search'
+})
+export class SearchPipe implements PipeTransform {
+  transform(products: IProduct[], searchInput: string): IProduct[]{
+    if(!searchInput) {
+      return  products;
+    }
+
+    searchInput = searchInput.toLowerCase();
+
+    return products.filter(item => {
+      if (item) {
+        return (item["name"].toLowerCase().includes(searchInput));
+      }
+      return false;
+    });
+  }
 }
