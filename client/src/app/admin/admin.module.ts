@@ -4,6 +4,7 @@ import { EditProductComponent } from './edit-product/edit-product.component';
 import {AdminComponent} from "./admin.component";
 import {SharedModule} from "../shared/shared.module";
 import {AdminRoutingModule} from "./admin-routing.module";
+import {RouterModule} from "@angular/router";
 
 
 
@@ -12,11 +13,12 @@ import {AdminRoutingModule} from "./admin-routing.module";
     AdminComponent,
     EditProductComponent
   ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    AdminRoutingModule
-  ],
+    imports: [
+        CommonModule,
+        SharedModule,
+        AdminRoutingModule,
+        RouterModule
+    ],
   exports : [
     AdminComponent
   ]

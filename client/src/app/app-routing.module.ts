@@ -9,7 +9,10 @@ const routes: Routes = [
   {path : '' , component : HomeComponent},
   {path : 'shop' , component : ShopComponent},
   {path : 'shop/:id' , component : ProductDetailsComponent},
-  {path : 'admin' , component : AdminComponent},
+  {path: 'admin',
+  loadChildren: () => import('./admin/admin.module')
+  .then(mod => mod.AdminModule), data: { breadcrumb: 'Admin' }
+   },
   {path : '**' , redirectTo : 'full'}
 ];
 
