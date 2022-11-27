@@ -24,4 +24,9 @@ export class ProductFormValues implements IProductToCreate {
   pictureUrl = '';
   productBrandId: number = 0;
   productTypeId: number = 0;
+
+  constructor(init?: ProductFormValues) {
+    Object.assign(this, init);
+  }
+
 }

@@ -12,8 +12,6 @@ import {AdminService} from "./admin.service";
 export class AdminComponent implements OnInit {
 
   products: IProduct[];
-  totalCount: number;
-
 
   constructor(private shopService: ShopService, private adminService: AdminService) {
   }

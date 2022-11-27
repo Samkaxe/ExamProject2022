@@ -32,7 +32,7 @@ export class AdminService {
     return this.http.post(this.baseUrl + 'products', product);
   }
 
-  updateProduct(product: IProduct, id: number) {
+  updateProduct(product: ProductFormValues, id: number) {
     return this.http.put(this.baseUrl + 'products/' + id, product);
   }
 
