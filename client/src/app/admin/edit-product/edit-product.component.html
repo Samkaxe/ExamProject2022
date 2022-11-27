@@ -1,1 +1,42 @@
-<p>edit-product works!</p>
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="product.name" name="name" />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input class="form-control" id="description" required [(ngModel)]="product.description" name="description" />
+      </div>
+      <div class="form-group">
+        <label for="type">Type</label>
+        <input class="form-control" id="type" required [(ngModel)]="product.productTypeId" name="type" />
+      </div>
+      <div class="form-group">
+        <label for="imageUrl">imageUrl</label>
+        <input class="form-control" id="imageUrl" required [(ngModel)]="product.pictureUrl" name="imageUrl" />
+      </div>
+      <div class="form-group">
+        <label for="BrandId">BrandId</label>
+        <select class="form-control" id="BrandId" required [(ngModel)]="product.productBrandId" name="BrandId">
+          <option *ngFor="let brand of Brands; let i = index" [value]="brand.id">{{brand.name}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="TypeId">TypeId</label>
+        <select class="form-control" id="TypeId" required [(ngModel)]="product.productTypeId" name="TypeId">
+          <option *ngFor="let type of types; let i = index" [value]="type.id">{{type.name}}</option>
+        </select>
+      </div>
+      <button (click)="saveBox()" class="btn btn-success">Submit</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Box was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newBox()">Add</button>
+    </div>
+  </div>
+</div>

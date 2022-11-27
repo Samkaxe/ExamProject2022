@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {IBrand} from "../../shared/models/brand";
+import {IProduct, IProductToCreate, ProductFormValues} from "../../shared/models/product";
+import {IType} from "../../shared/models/productType";
+import {AdminService} from "../admin.service";
 
 @Component({
   selector: 'app-edit-product',
@@ -7,9 +11,64 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditProductComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  product : IProductToCreate = {
+    name : '',
+    description :'',
+    price : 0,
+    pictureUrl : '',
+    productBrandId : 0,
+    productTypeId :0
   }
 
+  submitted: boolean = false;
+  Brands : IBrand[];
+  types : IType[];
+
+  constructor(private http : AdminService) { }
+
+  ngOnInit(): void {
+    this.getBrnads();
+    this.getTypes();
+  }
+
+  getBrnads(): void {
+    this.http.getAllBrands().subscribe(data => {
+      this.Brands = data;
+      console.log(data);
+    },error => {
+      console.log(error)
+    });
+  }
+
+
+  getTypes(): void {
+    this.http.getAllTypes().subscribe(
+      data => {
+        this.types = data;
+        console.log(data);
+      } , error => {
+        console.log(error);
+      });
+  }
+
+  saveBox() {
+    this.http.createProduct(this.product).subscribe( data => {
+      this.submitted = true ;
+      console.log(data)
+    },error => {
+      console.log(error)
+    })
+  }
+
+  newBox() {
+    this.submitted = false;
+    this.product = {
+      name : '',
+      description :'',
+      price : 0,
+      pictureUrl : '',
+      productBrandId : 0,
+      productTypeId :0
+    }
+  }
 }
