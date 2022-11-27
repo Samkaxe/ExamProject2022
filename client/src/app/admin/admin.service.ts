@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {environment} from "../../environments/environment";
 import {HttpClient} from "@angular/common/http";
-import {IProduct, ProductFormValues} from "../shared/models/product";
+import {IProduct, IProductToCreate, ProductFormValues} from "../shared/models/product";
 import {Observable} from "rxjs";
 import {IBrand} from "../shared/models/brand";
 import {IType} from "../shared/models/productType";
@@ -24,15 +24,15 @@ export class AdminService {
     return this.http.get<IType[]>(`${this.baseUrl}types`);
   }
 
-  get(id: any): Observable<IProduct[]> {
-    return this.http.get<IProduct[]>(`${this.baseUrl}products/${id}`);
+  get(id: any): Observable<IProduct> {
+    return this.http.get<IProduct>(`${this.baseUrl}products/${id}`);
   }
 
   createProduct(product: ProductFormValues) {
     return this.http.post(this.baseUrl + 'products', product);
   }
 
-  updateProduct(product: ProductFormValues, id: number) {
+  updateProduct(product: IProduct, id: number) {
     return this.http.put(this.baseUrl + 'products/' + id, product);
   }
 

@@ -27,29 +27,10 @@ export class EditProductComponent implements OnInit {
   constructor(private http : AdminService) { }
 
   ngOnInit(): void {
-    this.getBrnads();
-    this.getTypes();
-  }
 
-  getBrnads(): void {
-    this.http.getAllBrands().subscribe(data => {
-      this.Brands = data;
-      console.log(data);
-    },error => {
-      console.log(error)
-    });
   }
 
 
-  getTypes(): void {
-    this.http.getAllTypes().subscribe(
-      data => {
-        this.types = data;
-        console.log(data);
-      } , error => {
-        console.log(error);
-      });
-  }
 
   saveBox() {
     this.http.createProduct(this.product).subscribe( data => {

@@ -6,13 +6,15 @@ import {SharedModule} from "../shared/shared.module";
 import {AdminRoutingModule} from "./admin-routing.module";
 import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
+import { DetailProductComponent } from './detail-product/detail-product.component';
 
 
 
 @NgModule({
   declarations: [
     AdminComponent,
-    EditProductComponent
+    EditProductComponent,
+    DetailProductComponent
   ],
   imports: [
     CommonModule,
