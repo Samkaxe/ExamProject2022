@@ -9,6 +9,6 @@ public interface IProductService
      Task<IReadOnlyList<Product>> GetAllProducts();
      Product CreateNewProduct(ProductToCreateDTO dto);
      Task<Product> GetProductById(int id);
-     Product UpdateProduct(int id, Product product);
+     Task <Product> UpdateProduct(Product product);
      Product DeleteProduct(int id);
 }

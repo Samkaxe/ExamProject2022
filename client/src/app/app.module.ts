@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 
 import {HttpClientModule} from "@angular/common/http";
 import {CoreModule} from "./core/core.module";
-import { EditProductComponent } from './edit-product/edit-product.component';
 import {AdminModule} from "./admin/admin.module";
 import {ShopModule} from "./shop/shop.module";
 import {HomeModule} from "./home/home.module";
@@ -14,8 +13,6 @@ import {HomeModule} from "./home/home.module";
 @NgModule({
   declarations: [
     AppComponent,
-    EditProductComponent,
-
   ],
   imports: [
     BrowserModule,

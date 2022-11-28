@@ -4,18 +4,19 @@ import { EditProductComponent } from './edit-product/edit-product.component';
 import {AdminComponent} from "./admin.component";
 import {SharedModule} from "../shared/shared.module";
 import {AdminRoutingModule} from "./admin-routing.module";
-
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
   declarations: [
     AdminComponent,
-    EditProductComponent
+    EditProductComponent,
   ],
   imports: [
     CommonModule,
     SharedModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule,
   ],
   exports : [
     AdminComponent
