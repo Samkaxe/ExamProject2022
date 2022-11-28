@@ -53,8 +53,11 @@ public class ProductsController :BaseApiController
         try
         {
             var product = _mapper.Map<ProductToCreateDTO, Product>(dto);
+            product.PictureUrl = "https://localhost:5001/api/images/products/placeholder.png";
+            
             var result =  _service.CreateNewProduct(dto);
-            return Ok(result);
+          
+            return Ok(product);
         }
         catch (ValidationException v)
         {
@@ -68,11 +71,19 @@ public class ProductsController :BaseApiController
     
     [HttpPut]
     [Route("{id}")] 
-    public ActionResult<Product> UpdateProduct([FromRoute]int id, [FromBody]Product product)
+    public async Task<ActionResult<Product>> UpdateProduct([FromRoute]int id, [FromBody]ProductToCreateDTO productToUpdate)
     {
         try
         {
-            return Ok(_service.UpdateProduct(id, product));
+            var product = await _service.GetProductById(id);
+            _mapper.Map(productToUpdate, product);
+
+            _service.UpdateProduct(product);
+            
+          //  var productModel = _mapper.Map<ProductToCreateDTO, Product>(productToUpdate);
+            //var result =  _service.UpdateProduct(id, productModel);
+            
+            return Ok(product);
         } catch (KeyNotFoundException e) 
         {
             return NotFound("No product found at ID " + id);
@@ -81,6 +92,7 @@ public class ProductsController :BaseApiController
             return StatusCode(500, e.ToString());
         }
     }
+    
     
     [HttpDelete]
     [Route("{id}")]

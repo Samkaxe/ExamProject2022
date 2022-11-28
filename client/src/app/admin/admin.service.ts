@@ -29,10 +29,12 @@ export class AdminService {
   }
 
   createProduct(product: ProductFormValues) {
+    //product.pictureUrl = 'tested';
     return this.http.post(this.baseUrl + 'products', product);
   }
 
   updateProduct(product: ProductFormValues, id: number) {
+   // product.pictureUrl = 'tested';
     return this.http.put(this.baseUrl + 'products/' + id, product);
   }
 
