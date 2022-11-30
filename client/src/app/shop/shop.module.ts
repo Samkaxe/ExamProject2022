@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {SearchPipe, ShopComponent} from './shop.component';
+import {BrandFilterPipePipe, SearchPipe, ShopComponent, SortPipe, TypeFilterPipe} from './shop.component';
 import { ProductItemComponent } from './product-item/product-item.component';
 import {FormsModule} from "@angular/forms";
 import {BrowserModule} from "@angular/platform-browser";
@@ -14,6 +14,9 @@ import {RouterModule} from "@angular/router";
         ShopComponent,
         ProductItemComponent,
       SearchPipe,
+      BrandFilterPipePipe,
+      TypeFilterPipe,
+      SortPipe,
       ProductDetailsComponent
     ],
     exports: [
