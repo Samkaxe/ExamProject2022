@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MainInfor} from "../shared/models/Iinfo";
 
 @Component({
   selector: 'app-home',
@@ -16,15 +17,27 @@ export class HomeComponent implements OnInit {
     index8 :string = 'Small dogs can hear sounds in higher ranges than big dogs. In addition to being able to move in various ways, dogs ears are also able to detect much higher frequency sounds than human ears. In fact, dogs can hear sounds that are two times beyond our range—and it appears small dogs are actually better at it. According to Science Focus, thats because the smaller a mammals head is, the higher frequencies it can pick up and compare in each ear. Thats how they (and we) figure out where sounds are coming from.';
     index9 :string = 'Dogs mark their territory with glands in their paws. Dogs are not, in fact, trying to clumsily bury their poop when they scratch the ground after they go. They are just performing yet another territory-marking ritual. With the glands on their paws, they spread their scent and let other dogs know they are around. ';
     index10 :string = 'Dogs are more aggressive when being walked by a man.The presence of a leash, the sex of the owner, and the sex of the dog all play a part in the aggressiveness of a dog when theyre being walked. Dogs being walked by men are four times more likely to attack and bite another dog. Why? Because dogs not only react to the behavior and posture of other dogs around them but also to people. ';
-  items: string[] ;
+   items: MainInfor[] ;
 
     constructor() {
 
     }
 
   ngOnInit(): void {
-    // this.items.push(this.index2 , this.index3 , this.index4 , this.index5 , this.index6 , this.index7 , this.index8 ,this.index9 )
-    // console.log(this.items.values())
+   // this.foo();
+  }
+
+  foo() : void {
+      var dk1 : MainInfor = {ind :this.index2 , path : '4' };
+      var dk2 : MainInfor = {ind :this.index3 , path : '5' };
+      var dk3 : MainInfor = {ind :this.index4 , path : '6' };
+      var dk4 : MainInfor = {ind :this.index5 , path : '7' };
+      var dk5 : MainInfor = {ind :this.index6 , path : '8' };
+      var dk6 : MainInfor = {ind :this.index7 , path : '9' };
+
+     this.items.push(dk1 , dk2 ,dk3 ,dk4 ,dk5 ,dk6);
   }
 
 }
+
+
