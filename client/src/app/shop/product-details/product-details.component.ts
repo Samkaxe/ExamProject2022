@@ -20,6 +20,7 @@ export class ProductDetailsComponent implements OnInit {
   loadProduct(){
     this.shopService.getProduct(+this.activeRoute.snapshot.paramMap.get('id')).subscribe(product =>{
       this.product = product ;
+      console.log(product)
     }, error => {
       console.log(error);
     });

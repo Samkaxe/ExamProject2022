@@ -7,6 +7,7 @@ using FluentValidation;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using StackExchange.Redis;
 
 namespace API
 {
@@ -35,12 +36,19 @@ namespace API
              {
                  c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPIv5", Version = "v1" });
              });
-         
-            // services.AddCors(opt => {
-            //     opt.AddPolicy("CorsPolicy", policy => {
-            //         policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
-            //     });
-            // });
+
+             services.AddSingleton<IConnectionMultiplexer>(c =>
+             {
+                 var config = ConfigurationOptions.Parse(_configuration.GetConnectionString("Redis"),
+                     true);
+                 return ConnectionMultiplexer.Connect(config);
+             });
+
+             // services.AddCors(opt => {
+             //     opt.AddPolicy("CorsPolicy", policy => {
+             //         policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
+             //     });
+             // });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

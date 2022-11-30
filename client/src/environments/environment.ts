@@ -4,6 +4,9 @@
 
 export const environment = {
   production: false,
+  ALPHABETIC: 'aphabetical',
+  PRICE_DESCENDING: 'priceDescending',
+  PRICE_ASCENDING: 'priceAscending',
   apiUrl: 'https://localhost:5001/api/'
 };
 

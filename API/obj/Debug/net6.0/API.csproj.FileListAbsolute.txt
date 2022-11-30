@@ -168,3 +168,5 @@ C:\Users\charl\Documents\GitHub\ExamProject2022\API\bin\Debug\net6.0\AutoMapper.
 C:\Users\charl\Documents\GitHub\ExamProject2022\API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\charl\examProject\API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\charl\examProject\API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\charl\examProject\API\bin\Debug\net6.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\charl\examProject\API\bin\Debug\net6.0\StackExchange.Redis.dll

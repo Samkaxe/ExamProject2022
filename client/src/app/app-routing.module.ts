@@ -13,6 +13,10 @@ const routes: Routes = [
   loadChildren: () => import('./admin/admin.module')
   .then(mod => mod.AdminModule), data: { breadcrumb: 'Admin' }
    },
+  {path: 'basket',
+    loadChildren: () => import('./basket/basket.module')
+      .then(mod => mod.BasketModule), data: { breadcrumb: 'Basket'}
+  },
   {path : '**' , redirectTo : 'full'}
 ];
 
