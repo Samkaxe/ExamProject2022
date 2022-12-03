@@ -16,10 +16,11 @@ export class BasketService {
   constructor(private http : HttpClient) { }
 
   getBasket(id : string){
-    return this.http.get(this.baseUrl + 'basket?id' + id)
+    return this.http.get(this.baseUrl + 'basket?id=' + id)
       .pipe(
         map((basket : IBasket) => {
           this.basketSource.next(basket);
+          console.log(this.getCurrentBasketValue());
         })
       );
   }
@@ -27,6 +28,7 @@ export class BasketService {
   setBasket(basket : IBasket){
     return this.http.post(this.baseUrl+ 'basket' , basket).subscribe((res : IBasket) => {
       this.basketSource.next(res);
+      console.log(res)
     }, error => {
       console.log(error)
     })
@@ -36,8 +38,33 @@ export class BasketService {
     return this.basketSource.value ;
   }
 
-  assItemToBasket(item : IProduct , quantity = 1){
+  addItemToBasket(item : IProduct , quantity = 1){
     const itemToAdd : IBaskettem = this.mapper(item , quantity);
+    const basket = this.getCurrentBasketValue() ?? this.createBasket();
+    //basket.items.push(itemToAdd);
+  basket.items = this.addUpdateItem(basket.items , itemToAdd , quantity);
+  this.setBasket(basket);
+  }
+
+  private addUpdateItem(items: IBaskettem[], itemToAdd: IBaskettem, quantity: number) : IBaskettem[] {
+    console.log(items);
+    const index = items.findIndex(i => i.id === itemToAdd.id)
+    if(index === -1){
+      itemToAdd.quantity = quantity ;
+      items.push(itemToAdd);
+    }
+    else {
+     // items [index].quantity = ++quantity ;
+      items [index].quantity += quantity ;
+    }
+    return items ;
+  }
+
+  private createBasket() : IBasket {
+  const basket = new Basket();
+  localStorage.setItem('basket_id' , basket.id);
+
+  return basket;
   }
 
   private mapper(item: IProduct, quantity: number):IBaskettem {
@@ -51,4 +78,5 @@ export class BasketService {
       type : item.productType
     }
   }
+
 }
