@@ -8,5 +8,9 @@ public interface ITypeService
     Task<IReadOnlyList<ProductType>> GetAllTypes();
     
     Task<ProductType> GetTypeById(int id);
+    
+    ProductType CreateType(ProductTypeToCreateDTO dto);
+    
+    ProductType DeleteType(int id);
       
 }

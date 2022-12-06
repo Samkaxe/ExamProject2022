@@ -3,3 +3,6 @@
 obj
 bin
 node_modules
+*.dll
+*.cache
+*.dll
