@@ -1,6 +1,8 @@
-﻿using Application.DTOs;
+﻿using System.Text.Json;
+using Application.DTOs;
 using Core.Entities;
 using FluentValidation;
+using SQLitePCL;
 
 namespace Application.Validators;
 
@@ -17,7 +19,20 @@ public class PostBrandValidator : AbstractValidator<ProductBrandToCreateDTO>
 {
     public PostBrandValidator()
     {
-        RuleFor(p => p.Name).NotEmpty();
+        var badData = File.ReadAllText("../Application/Validators/Data/badData.json"); 
+        var badWods = JsonSerializer.Deserialize<List<string>>(badData);
+        
+         List<string> badwords = new List<string>();
+         badwords.Add("one");
+         badwords.Add("two");
+         badwords.Add("three");
+        
+       RuleFor(p => p.Name).NotEmpty().WithMessage("please insert valid characters "); 
+       RuleFor(p => p.Name).NotNull().WithMessage("name cant be null");
+        foreach (var v in badWods)
+        {
+            RuleFor(p => p.Name).NotEqual(v);
+        }
     }
 }
 
