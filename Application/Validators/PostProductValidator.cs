@@ -19,8 +19,8 @@ public class PostBrandValidator : AbstractValidator<ProductBrandToCreateDTO>
 {
     public PostBrandValidator()
     {
-        var badData = File.ReadAllText("../Application/Validators/Data/badData.json"); 
-        var badWods = JsonSerializer.Deserialize<List<string>>(badData);
+      //  var badData = File.ReadAllText("../Application/Validators/Data/badData.json"); 
+       // var badWods = JsonSerializer.Deserialize<List<string>>(badData);
         
          List<string> badwords = new List<string>();
          badwords.Add("one");
@@ -29,7 +29,7 @@ public class PostBrandValidator : AbstractValidator<ProductBrandToCreateDTO>
         
        RuleFor(p => p.Name).NotEmpty().WithMessage("please insert valid characters "); 
        RuleFor(p => p.Name).NotNull().WithMessage("name cant be null");
-        foreach (var v in badWods)
+        foreach (var v in badwords)
         {
             RuleFor(p => p.Name).NotEqual(v);
         }
