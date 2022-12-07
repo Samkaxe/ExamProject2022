@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {environment} from "../../environments/environment";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpRequest} from "@angular/common/http";
 import {IProduct, IProductToCreate, ProductFormValues} from "../shared/models/product";
 import {Observable} from "rxjs";
 import {IBrand} from "../shared/models/brand";
@@ -40,5 +40,16 @@ export class AdminService {
 
   deleteProduct(id: number) {
     return this.http.delete(this.baseUrl + 'products/' + id);
+  }
+
+  upload(file: File) {
+    const formData: FormData = new FormData();
+    formData.append('image', file);
+    formData.append('ImagePath',file.name    )
+    const req = new HttpRequest('POST', `${this.baseUrl}upload`, formData, {
+      reportProgress: true,
+      responseType: 'json'
+    });
+    return this.http.request(req);
   }
 }

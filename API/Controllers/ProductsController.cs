@@ -53,7 +53,7 @@ public class ProductsController :BaseApiController
         try
         {
             var product = _mapper.Map<ProductToCreateDTO, Product>(dto);
-            product.PictureUrl = "https://localhost:5001/api/images/products/placeholder.png";
+            //product.PictureUrl = "https://localhost:5001/api/images/products/placeholder.png";
             
             var result =  _service.CreateNewProduct(dto);
           

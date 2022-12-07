@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {IBrand} from "../../shared/models/brand";
 import {IProduct, IProductToCreate, ProductFormValues} from "../../shared/models/product";
 import {IType} from "../../shared/models/productType";
 import {AdminService} from "../admin.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {forkJoin} from "rxjs";
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-edit-product',
@@ -15,8 +16,8 @@ export class EditProductComponent implements OnInit {
 
   product: ProductFormValues;
   submitted: boolean = false;
-  Brands : IBrand[];
-  types : IType[];
+  Brands: IBrand[];
+  types: IType[];
 
   constructor(private adminService: AdminService,
               private route: ActivatedRoute,
@@ -39,6 +40,11 @@ export class EditProductComponent implements OnInit {
       }
     });
 
+  }
+
+  uploadChanged(fileName: string) {
+    this.product.picturePath =fileName;
+    this.product.pictureUrl =fileName;
   }
 
   updatePrice(event: any) {
@@ -71,6 +77,12 @@ export class EditProductComponent implements OnInit {
   // }
 
   onSubmit(product: ProductFormValues) {
+    if (!product.pictureUrl) {
+      console.log(product);
+      return;
+
+    }
+
     if (this.route.snapshot.url[0].path === 'edit') {
       const updatedProduct = {...this.product, ...product, price: +product.price};
       console.log(+this.route.snapshot.paramMap.get('id'));

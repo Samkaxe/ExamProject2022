@@ -7,7 +7,8 @@ export const environment = {
   ALPHABETIC: 'aphabetical',
   PRICE_DESCENDING: 'priceDescending',
   PRICE_ASCENDING: 'priceAscending',
-  apiUrl: 'https://localhost:5001/api/'
+  apiUrl: 'https://localhost:5001/api/',
+  serverUrl:'https://localhost:5001/'
 };
 
 /*
