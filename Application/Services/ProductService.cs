@@ -50,8 +50,6 @@ public class ProductService : IProductService
     {
         try
         {
-            //var product = _mapper.Map<ProductToCreateDTO, Product>(dto);
-
             var validation = _postValidator.Validate(dto);
             if (!validation.IsValid)
                 throw new ValidationException("line 32 method create new product in product service ");

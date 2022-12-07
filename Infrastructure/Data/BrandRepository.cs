@@ -22,4 +22,19 @@ public class BrandRepository : IBrandRepository
     {
        return await _context.ProductBrands.FirstOrDefaultAsync(p => p.Id == id);
     }
+
+    public ProductBrand CreateBrand(ProductBrand brand)
+    {
+        _context.ProductBrands.Add(brand);
+        _context.SaveChanges();
+        return brand;
+    }
+
+    public ProductBrand DeleteBrand(int id)
+    {
+        var brand = _context.ProductBrands.Find(id) ?? throw new KeyNotFoundException();
+        _context.ProductBrands.Remove(brand);
+        _context.SaveChanges();
+        return brand;
+    }
 }

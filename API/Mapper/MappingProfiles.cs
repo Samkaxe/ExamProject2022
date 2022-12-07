@@ -17,6 +17,10 @@ public class MappingProfiles : Profile
 
 
         CreateMap<ProductToCreateDTO, Product>();
+
+        CreateMap<ProductBrandToCreateDTO, ProductBrand>();
         
+        CreateMap<ProductTypeToCreateDTO, ProductType>();
+
     } 
 }

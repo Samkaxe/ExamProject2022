@@ -14,10 +14,10 @@ public class BasketController : BaseApiController
     }
     
     [HttpGet]
-    public async Task<ActionResult<CustomerBasket>> GetBasketById(string id)
+    public async Task<ActionResult<CustomerBasket>> GetBasketById(string Id)
     {
-        var basket = await _repository.GetBasket(id);
-        return Ok(basket ?? new CustomerBasket(id));
+        var basket = await _repository.GetBasket(Id);
+        return Ok(basket ?? new CustomerBasket(Id));
     }
 
     [HttpPost]
