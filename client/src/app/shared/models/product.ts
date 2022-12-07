@@ -22,6 +22,7 @@ export class ProductFormValues implements IProductToCreate {
   description = '';
   price = 0;
   pictureUrl = '';
+  picturePath = '';
   productBrandId: number = 0;
   productTypeId: number = 0;
 

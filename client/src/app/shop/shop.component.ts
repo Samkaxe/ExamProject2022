@@ -3,7 +3,7 @@ import {IProduct} from "../shared/models/product";
 import {ShopService} from "./shop.service";
 import {IBrand} from "../shared/models/brand";
 import {IType} from "../shared/models/productType";
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 import {environment} from "../../environments/environment";
 
 
@@ -25,12 +25,13 @@ export class ShopComponent implements OnInit {
   alphabetic = environment.ALPHABETIC;
   priceAscending = environment.PRICE_ASCENDING;
   priceDescending = environment.PRICE_DESCENDING;
-  public sortValue: string=this.alphabetic;
+  public sortValue: string = this.alphabetic;
 
   @Output()
-  searchTextChanged : EventEmitter<string> = new EventEmitter<string>();
+  searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor(private shopService : ShopService) { }
+  constructor(private shopService: ShopService) {
+  }
 
   ngOnInit(): void {
     this.getProducts();
@@ -38,33 +39,32 @@ export class ShopComponent implements OnInit {
     this.getTypes();
   }
 
-  getProducts(){
+  getProducts() {
     this.shopService.getProducts().subscribe(res => {
-      this.products = res ;
+      this.products = res.sort(comapreProductName());
     }, error => {
       console.log(error)
     })
   }
 
-  getBrands(){
+  getBrands() {
     this.shopService.getBrands().subscribe(res => {
-      this.brands = res ;
-    } ,error => {
+      this.brands = res;
+    }, error => {
       console.log(error)
     });
   }
 
-  getTypes(){
+  getTypes() {
     this.shopService.getType().subscribe(res => {
-      this.types = res ;
-    } ,error => {
+      this.types = res;
+    }, error => {
       console.log(error)
     });
   }
 
 
-
-  toggleExpand(product : any) {
+  toggleExpand(product: any) {
     product.expanded = !product.expanded;
   }
 
@@ -78,14 +78,13 @@ export class ShopComponent implements OnInit {
 }
 
 
-
 @Pipe({
-  name:'search'
+  name: 'search'
 })
 export class SearchPipe implements PipeTransform {
-  transform(products: IProduct[], searchInput: string): IProduct[]{
-    if(!searchInput) {
-      return  products;
+  transform(products: IProduct[], searchInput: string): IProduct[] {
+    if (!searchInput) {
+      return products;
     }
 
     searchInput = searchInput.toLowerCase();
@@ -117,24 +116,28 @@ export class TypeFilterPipe implements PipeTransform {
 
 }
 
+function comapreProductName() {
+  return (a, b) => {
+    let aName = a.name.toLowerCase();
+    let bName = b.name.toLowerCase();
+    if (aName < bName) return -1;
+    if (aName > bName) return 1;
+    return 0;
+  };
+}
+
 @Pipe({name: 'sort'})
 export class SortPipe implements PipeTransform {
   transform(products: IProduct[], sort: string): IProduct[] {
     if (!sort) return products
-    if (sort === environment.ALPHABETIC) {
-      products.sort((a, b) => {
-        let aName = a.name.toLowerCase();
-        let bName = b.name.toLowerCase();
-        if (aName < bName) return -1;
-        if (aName > bName) return 1;
-        return 0;
-      })
+    if (sort === environment.ALPHABETIC && products) {
+      products.sort(comapreProductName())
     }
     if (sort === environment.PRICE_ASCENDING) {
-      products.sort((a,b)=>a.price-b.price);
+      products.sort((a, b) => a.price - b.price);
     }
     if (sort == environment.PRICE_DESCENDING) {
-      products.sort((a,b)=>b.price-a.price);
+      products.sort((a, b) => b.price - a.price);
     }
     return products;
   }

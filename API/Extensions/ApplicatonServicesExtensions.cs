@@ -21,7 +21,7 @@ public static class ApplicatonServicesExtensions
         
         services.AddScoped<ITypeRepository, TypeRepository>();
         services.AddScoped<ITypeService, ProductTypeService>();
-        
+        services.AddTransient<IUploadService, UploadService>();
         services.Configure<ApiBehaviorOptions>(options =>
         {
             options.InvalidModelStateResponseFactory = actionContext =>
