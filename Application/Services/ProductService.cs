@@ -22,10 +22,10 @@ public class ProductService : IProductService
 
     public ProductService(
         IProductRepository repository,
-        IMapper mapper, 
+        IMapper mapper,
         IValidator<ProductToCreateDTO> postValidator,
         IValidator<Product> productValidator
-        )
+    )
     {
         _repository = repository;
         _mapper = mapper;
@@ -36,10 +36,10 @@ public class ProductService : IProductService
     public async Task<IReadOnlyList<Product>> GetAllProducts()
     {
         var products = await _repository.GetProductsAsync();
-        
+
         return ObjectMapper.Mapper.Map<IReadOnlyList<Product>>(products);
     }
-    
+
     public async Task<Product> GetProductById(int id)
     {
         var product = await _repository.GetProductByIdAsync(id);
@@ -64,23 +64,23 @@ public class ProductService : IProductService
         }
 
         throw new Exception();
-
     }
-    
+
     public async Task<Product> UpdateProduct(Product product)
     {
         //
         // if (id != product.Id)
         //     throw new ValidationException("Method UpdateProduct line 47 is ProductService");
         //
-        // var validation = _productValidator.Validate(product);
-        // if (!validation.IsValid)
-        //     throw new ValidationException(validation.ToString());
+        var validation = _productValidator.Validate(product);
+        if (!validation.IsValid)
+            throw new ValidationException(validation.ToString());
+
         //
         //
         // var dbproduct = await _repository.GetProductByIdAsync(id);
-        
-        return  _repository.UpdateProduct(product);
+
+        return _repository.UpdateProduct(product);
     }
 
     public Product DeleteProduct(int id)

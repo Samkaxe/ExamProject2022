@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9BLyDkOTDJf3QAKtA+AQdNJV2RqRYb+90C3D0n50wpQ=",
+  "Hash": "pJvPrJEg9M/D2AsWXvjdHTDftOrZqSc68AtxImwph34=",
   "Source": "API",
   "BasePath": "_content/API",
   "Mode": "Default",
@@ -51,6 +51,23 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\20220720_100911_cfe3.jpg"
     },
     {
+      "Identity": "C:\\Users\\zkooh\\OneDrive\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\20220720_101500 (1)_b1ad.jpg",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\zkooh\\OneDrive\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/products/20220720_101500 (1)_b1ad.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\20220720_101500 (1)_b1ad.jpg"
+    },
+    {
       "Identity": "C:\\Users\\zkooh\\OneDrive\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\20220720_101500 (1)_d557.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
@@ -66,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\products\\20220720_101500 (1)_d557.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\zkooh\\OneDrive\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\20220720_101500 (1)_ee13.jpg",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\zkooh\\OneDrive\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/products/20220720_101500 (1)_ee13.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\20220720_101500 (1)_ee13.jpg"
     },
     {
       "Identity": "C:\\Users\\zkooh\\OneDrive\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\acana-grass-fed-lamb-66849_940x.jpg",
@@ -270,6 +304,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\products\\IMG_2378_4721.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\zkooh\\OneDrive\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\IMG_9274_5ba6.jpg",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\zkooh\\OneDrive\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/products/IMG_9274_5ba6.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\IMG_9274_5ba6.jpg"
     },
     {
       "Identity": "C:\\Users\\zkooh\\OneDrive\\Documents\\GitHub\\ExamProject2022\\API\\wwwroot\\images\\products\\KongBelt1.jpg",

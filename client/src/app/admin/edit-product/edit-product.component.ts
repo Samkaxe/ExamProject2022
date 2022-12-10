@@ -84,7 +84,7 @@ export class EditProductComponent implements OnInit {
     }
 
     if (this.route.snapshot.url[0].path === 'edit') {
-      const updatedProduct = {...this.product, ...product, price: +product.price};
+      const updatedProduct = {...this.product, ...product, price: +product.price,pictureUrl:this.product.picturePath};
       console.log(+this.route.snapshot.paramMap.get('id'));
       //console.log('hey')
       this.adminService.updateProduct(updatedProduct, +this.route.snapshot.paramMap.get('id')).subscribe((response: any) => {
