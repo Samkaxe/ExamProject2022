@@ -67,18 +67,15 @@ public class ProductService : IProductService
     
     public async Task<Product> UpdateProduct(Product product)
     {
-        //
-        // if (id != product.Id)
-        //     throw new ValidationException("Method UpdateProduct line 47 is ProductService");
-        //
-        // var validation = _productValidator.Validate(product);
-        // if (!validation.IsValid)
-        //     throw new ValidationException(validation.ToString());
-        //
-        //
-        // var dbproduct = await _repository.GetProductByIdAsync(id);
         
-        return  _repository.UpdateProduct(product);
+        if (product.Id == null)
+            throw new ValidationException("Method UpdateProduct line 47 is ProductService");
+        
+        var validation = _productValidator.Validate(product);
+        if (!validation.IsValid)
+            throw new ValidationException(validation.ToString());
+
+        return _repository.UpdateProduct(product);
     }
 
     public Product DeleteProduct(int id)

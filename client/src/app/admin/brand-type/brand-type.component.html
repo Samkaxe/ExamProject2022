@@ -1,0 +1,61 @@
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">
+        <div class="p-2">Id</div>
+      </th>
+      <th scope="col">
+        <div class="py-2 text-uppercase">Brands</div>
+      </th>
+      <th scope="col">
+        <div class="p-2 px-3 text-uppercase">Delete</div>
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let brand of brands">
+      <td class="align-middle">{{brand.id}}</td>
+      <th class="align-middle"><h5>{{brand.name}}</h5></th>
+      <td class="align-middle">
+        <button (click)="deleteBrands(brand.id)" class="btn btn-danger">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">
+        <div class="p-2">Id</div>
+      </th>
+      <th scope="col">
+        <div class="py-2 text-uppercase">Types</div>
+      </th>
+      <th scope="col">
+        <div class="p-2 px-3 text-uppercase">Delete</div>
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let type of types">
+      <td class="align-middle">{{type.id}}</td>
+      <th class="align-middle"><h5>{{type.name}}</h5></th>
+      <td class="align-middle">
+        <button (click)="deleteTypes(type.id)" class="btn btn-danger">Delete</button>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+  <div class="container ">
+    <button
+    (click) ="createType()"  style="margin:5px;"> create Type</button>
+    <input matInput placeholder="Type"  required [(ngModel)]="type.name">
+  </div>
+  <div class="container">
+    <button  (click) ="createBrand()" style="margin:5px;">create Brand </button>
+    <input matInput placeholder="Brand" required [(ngModel)]="brand.name">
+  </div>
+</div>

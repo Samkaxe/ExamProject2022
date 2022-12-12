@@ -3,8 +3,8 @@ import {environment} from "../../environments/environment";
 import {HttpClient, HttpRequest} from "@angular/common/http";
 import {IProduct, IProductToCreate, ProductFormValues} from "../shared/models/product";
 import {Observable} from "rxjs";
-import {IBrand} from "../shared/models/brand";
-import {IType} from "../shared/models/productType";
+import {IBrand, IBrandToCreate} from "../shared/models/brand";
+import {IType, ITypeToCreate} from "../shared/models/productType";
 
 @Injectable({
   providedIn: 'root'
@@ -17,11 +17,11 @@ export class AdminService {
     return this.http.get<IProduct[]>(`${this.baseUrl}products`);
   }
   getAllBrands(): Observable<IBrand[]> {
-    return this.http.get<IBrand[]>(`${this.baseUrl}brands`);
+    return this.http.get<IBrand[]>(`${this.baseUrl}Brands`);
   }
 
   getAllTypes(): Observable<IType[]>{
-    return this.http.get<IType[]>(`${this.baseUrl}types`);
+    return this.http.get<IType[]>(`${this.baseUrl}Types`);
   }
 
   get(id: any): Observable<IProduct> {
@@ -29,17 +29,31 @@ export class AdminService {
   }
 
   createProduct(product: ProductFormValues) {
-    //product.pictureUrl = 'tested';
     return this.http.post(this.baseUrl + 'products', product);
   }
 
+  createBrand(brand : IBrandToCreate) {
+    return this.http.post(this.baseUrl + 'brands' , brand);
+  }
+
+  createType(type : ITypeToCreate){
+    return this.http.post(this.baseUrl + 'types' , type);
+  }
+
   updateProduct(product: ProductFormValues, id: number) {
-   // product.pictureUrl = 'tested';
     return this.http.put(this.baseUrl + 'products/' + id, product);
   }
 
   deleteProduct(id: number) {
     return this.http.delete(this.baseUrl + 'products/' + id);
+  }
+
+  deleteBrand(id: number) {
+    return this.http.delete(this.baseUrl + 'brands/' + id);
+  }
+
+  deleteType(id :number){
+    return this.http.delete(this.baseUrl + 'types/' + id);
   }
 
   upload(file: File) {
