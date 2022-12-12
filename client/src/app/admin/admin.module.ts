@@ -6,6 +6,7 @@ import {SharedModule} from "../shared/shared.module";
 import {AdminRoutingModule} from "./admin-routing.module";
 import {FormsModule} from "@angular/forms";
 import {ImageUploadComponent} from "./image-upload/image-upload.component";
+import { BrandTypeComponent } from './brand-type/brand-type.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import {ImageUploadComponent} from "./image-upload/image-upload.component";
     AdminComponent,
     EditProductComponent,
     ImageUploadComponent,
+    BrandTypeComponent,
   ],
   imports: [
     CommonModule,

@@ -67,15 +67,6 @@ export class EditProductComponent implements OnInit {
     return this.adminService.getAllTypes();
   }
 
-  // saveBox() {
-  //   this.adminService.createProduct(this.product).subscribe( data => {
-  //     this.submitted = true ;
-  //     console.log(data)
-  //   },error => {
-  //     console.log(error)
-  //   })
-  // }
-
   onSubmit(product: ProductFormValues) {
     if (!product.pictureUrl) {
       console.log(product);
@@ -100,15 +91,4 @@ export class EditProductComponent implements OnInit {
     }
   }
 
-  // newBox() {
-  //   this.submitted = false;
-  //   this.product = {
-  //     name : '',
-  //     description :'',
-  //     price : 0,
-  //     pictureUrl : '',
-  //     productBrandId : 0,
-  //     productTypeId :0
-  //   }
-  // }
 }

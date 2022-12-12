@@ -72,32 +72,42 @@ public class ProductServiceTest
         _service.CreateNewProduct(toCreateDto);
         _repositoryMock.Verify(repository => repository.CreateNewProduct(It.IsAny<Product>()), Times.Once);
     }
-
+    
+    
     [Fact]
-    public void ShouldThrowExceptionWhenInputIdIsNotEqualToProductId()
-    {
-       // Assert.Throws<ValidationException>(() => _service.UpdateProduct(1, new Product {Id = 2}));
-    }
-
-    [Fact]
-    public void ShouldThrowExceptionWhenInputProductIsInvalid()
+    public async Task ShouldThrowExceptionWhenInputProductIsInvalid()
     {
         _productValidatorMock.Setup(validator => validator.Validate(It.IsAny<Product>()))
             .Returns(new ValidationResult(new[] {new ValidationFailure("Name", "required")}));
-        //Assert.Throws<ValidationException>(() => _service.UpdateProduct(1, new Product {Id = 1}));
+        await Assert.ThrowsAsync<ValidationException>(() => _service.UpdateProduct( new Product {Id = 1}));
     }
 
     [Fact]
     public void ShouldCallUpdateProductFromRepositoryWhenUpdating()
     {
-        // _productValidatorMock.Setup(validator => validator.Validate(It.IsAny<Product>()))
-        //     .Returns(new ValidationResult());
-        // _service.UpdateProduct(1,
-        //     new Product
-        //     {
-        //         Id = 1, Name = "name", Description = "description", Price = (decimal) 20.30, PictureUrl = "",
-        //         ProductBrandId = 1, ProductTypeId = 1
-        //     });
-        // _repositoryMock.Verify(repository => repository.UpdateProduct(It.IsAny<Product>()),Times.Once);
+        _productValidatorMock.Setup(validator => validator.Validate(It.IsAny<Product>()))
+            .Returns(new ValidationResult());
+        _service.UpdateProduct(
+            new Product
+            {
+                Id = 1, Name = "name", Description = "description", Price = (decimal) 20.30, PictureUrl = "",
+                ProductBrandId = 1, ProductTypeId = 1
+            });
+        _repositoryMock.Verify(repository => repository.UpdateProduct(It.IsAny<Product>()),Times.Once);
     }
+    
+    // [Fact]
+    // public void  shouldDeleteproduct()
+    // {        
+    //   
+    //     var id = 1;
+    //     _repositoryMock.Setup(repo => repo.GetProductByIdAsync(id)).ReturnsAsync(new Product(){});
+    //     _repositoryMock.Setup(repo => repo.DeleteProduct(It.IsAny<Product>())).Returns(Task.CompletedTask);
+    //
+    //    
+    //      _service.DeleteProduct(id);
+    //
+    //     
+    //     _repositoryMock.Verify(repo => repo.DeleteProduct(It.IsAny<Product>()),Times.Once);
+    // }
 }
