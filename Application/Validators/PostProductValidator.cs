@@ -12,6 +12,9 @@ public class PostProductValidator : AbstractValidator<ProductToCreateDTO>
     {
         RuleFor(p => p.Price).GreaterThan(0);
         RuleFor(p => p.Name).NotEmpty();
+        RuleFor(p => p.Description).NotEmpty().MaximumLength(500);
+        RuleFor(p => p.ProductBrandId).NotNull().WithMessage("you must select Brand");
+        RuleFor(p => p.ProductTypeId).NotNull().WithMessage("you must select Type");
     }
 }
 
@@ -29,7 +32,10 @@ public class PostBrandValidator : AbstractValidator<ProductBrandToCreateDTO>
         
        RuleFor(p => p.Name).NotEmpty().WithMessage("please insert valid characters "); 
        RuleFor(p => p.Name).NotNull().WithMessage("name cant be null");
-        foreach (var v in badwords)
+       // we thought we could validate bad words dictionary by sets of string in json file but we found out json hold object 
+       // so the best way was normal file, deserialize to to list and with in loop check for validation 
+       // it works as you can see but we didnot give it too much attention since if we use real file its gonna be big as i think and this might take some memory
+       foreach (var v in badwords)
         {
             RuleFor(p => p.Name).NotEqual(v);
         }
@@ -48,9 +54,14 @@ public class ProductValidator : AbstractValidator<Product>
 {
     public ProductValidator()
     {
-        RuleFor(p => p.Price).GreaterThan(0);
-        RuleFor(p => p.Name).NotEmpty();
-        RuleFor(p => p.Id).GreaterThan(0);
+        RuleFor(p => p.Price).GreaterThan(0).NotNull();
+        RuleFor(p => p.Name).NotEmpty().MaximumLength(250);
+        RuleFor(p => p.Id).GreaterThan(0).NotNull();
+        RuleFor(p => p.Description).NotEmpty().NotNull();
+        RuleFor(p => p.PictureUrl).NotEmpty().NotNull();
+        RuleFor(p => p.ProductType).NotEmpty().NotNull();
+        RuleFor(p => p.ProductBrand).NotNull();
+        RuleFor(p => p.ProductType).NotNull();
     }
 }
 
@@ -59,6 +70,7 @@ public class ProductTypeValidator : AbstractValidator<ProductType>
     public ProductTypeValidator()
     {
         RuleFor(p => p.Name).NotEmpty();
+        RuleFor(P => P.Id).NotNull();
     }
 }
 
@@ -67,5 +79,6 @@ public class ProductBrandValidator : AbstractValidator<ProductBrand>
     public ProductBrandValidator()
     {
         RuleFor(p => p.Name).NotEmpty();
+        RuleFor(P => P.Id).NotNull();
     }
 }

@@ -69,4 +69,11 @@ public class ProductBrandServiceTest
         _service.CreateBrand(toCreateDto);
         _repositoryMock.Verify(repository => repository.CreateBrand(It.IsAny<ProductBrand>()), Times.Once);
     }
+    
+    [Fact]
+    public void ShouldCallDeleteProductFromRepositoryWhenDeletingProduct()
+    {
+        _service.DeleteBrand(1);
+        _repositoryMock.Verify(repository => repository.DeleteBrand(It.IsAny<int>()), Times.Once);
+    }
 }
