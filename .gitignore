@@ -1,0 +1,9 @@
+﻿
+
+obj
+bin
+node_modules
+*.dll
+*.pdb
+*.cache
+

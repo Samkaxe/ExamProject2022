@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="row">
+    <section class="col-3">
+      <h5 class="text-warning">Sort</h5>
+      <select [(ngModel)]="sortValue" class="custom-select mb-3">
+        <option [value]="alphabetic">Alphatbetical</option>
+        <option [value]="priceAscending">Price : Low To High</option>
+        <option [value]="priceDescending">Price : High To Low</option>
+      </select>
+      <h5 class="text-warning">Brands</h5>
+      <ul class="list-group my-3">
+        <li class="list-group-item" [ngClass]="{'active':!selectedBrand}"  (click)="selectBrand(null)">All</li>  <!--to clear filter -->
+        <li class="list-group-item" [ngClass]="{'active':selectedBrand===brand}" (click)="selectBrand(brand)" *ngFor="let brand of brands">{{brand.name}}</li>
+      </ul>
+
+      <h5 class="text-warning">Types</h5>
+      <ul class="list-group my-3">
+        <li class="list-group-item" [ngClass]="{'active' :!selectedType}" (click)="selectType(null)">All</li> <!--to clear filter -->
+        <li class="list-group-item" [ngClass]="{'active':selectedType===type}" (click)="selectType(type)" *ngFor="let type of types">{{type.name}}</li>
+      </ul>
+    </section>
+    <section class="col-9">
+      <div class="d-flex justify-content-between align-items-center pb-2">
+        <header>
+          <span>Showing <strong>10</strong> of <strong>16 result</strong></span>
+        </header>
+        <div class="form-inline mt-2">
+          <input name="searchInput" [(ngModel)]="searchInput" type="text" placeholder="Search here" size="50">
+          <button class="btn btn-outline-success ml-2 my-2">Reset</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4"
+             *ngFor="let item of products | search : searchInput |brandFilter:selectedBrand |typeFilter:selectedType |sort:sortValue">
+          <app-product-item [product]="item"></app-product-item>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--      <select class="col-3">-->
+<!--        <h5 class="text-warning">Sort</h5>-->
+<!--        <select [(ngModel)]="sortValue" class="custom-select mb-3">-->
+<!--          <option [value]="alphabetic">Alphatbetical</option>-->
+<!--          <option [value]="priceAscending">Price : Low To High</option>-->
+<!--          <option [value]="priceDescending">Price : High To Low</option>-->
+<!--        </select>-->
+<!--          <h5 class="text-warning">Brands</h5>-->
+<!--          <ul class="list-group my-3">-->
+<!--            <li class="list-group-item" [ngClass]="{'active':!selectedBrand}"  (click)="selectBrand(null)">All</li>  &lt;!&ndash;to clear filter &ndash;&gt;-->
+<!--            <li class="list-group-item" [ngClass]="{'active':selectedBrand===brand}" (click)="selectBrand(brand)" *ngFor="let brand of brands">{{brand.name}}</li>-->
+<!--          </ul>-->
+
+<!--          <h5 class="text-warning">Types</h5>-->
+<!--          <ul class="list-group my-3">-->
+<!--            <li class="list-group-item" *ngFor="let type of types">{{type.name}}</li>-->
+<!--            <li class="list-group-item" [ngClass]="{'active' :!selectedType}" (click)="selectType(null)">All</li> &lt;!&ndash;to clear filter &ndash;&gt;-->
+<!--            <li class="list-group-item" [ngClass]="{'active':selectedType===type}" (click)="selectType(type)" *ngFor="let type of types">{{type.name}}</li>-->
+<!--          </ul>-->
+<!--        </select>-->
+
+<!--      <section class="col-9">-->
+<!--        <div class="d-flex justify-content-between align-items-center pb-2">-->
+<!--          <header>-->
+<!--            <span>Showing <strong>10</strong> of <strong>16 result</strong></span>-->
+<!--          </header>-->
+<!--          <header>-->
+<!--            <span>Showing <strong>10</strong> of <strong>16 result</strong></span>-->
+<!--          </header>-->
+<!--          <div class="form-inline mt-2">-->
+<!--            <input name="searchInput" [(ngModel)]="searchInput" type="text"  placeholder="Search here" size="50" >-->
+<!--            <input name="searchInput" [(ngModel)]="searchInput" type="text" placeholder="Search here" size="50">-->
+<!--            <button class="btn btn-outline-success ml-2 my-2">Reset</button>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="row">-->
+<!--          <div class="col-4" *ngFor="let item of products | search : searchInput ">-->
+<!--            <div class="col-4"-->
+<!--                 *ngFor="let item of products | search : searchInput |brandFilter:selectedBrand |typeFilter:selectedType |sort:sortValue">-->
+<!--              <app-product-item [product]="item"></app-product-item>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </section>-->
+<!--  </div>-->
+<!--</div>-->
