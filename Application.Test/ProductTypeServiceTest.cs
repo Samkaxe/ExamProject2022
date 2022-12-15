@@ -70,4 +70,11 @@ public class ProductTypeServiceTest
         _service.CreateType(toCreateDto);
         _repositoryMock.Verify(repository => repository.CreateType(It.IsAny<ProductType>()), Times.Once);
     }
+    
+    [Fact]
+    public void ShouldCallDeleteProductFromRepositoryWhenDeletingProduct()
+    {
+        _service.DeleteType(1);
+        _repositoryMock.Verify(repository => repository.DeleteType(It.IsAny<int>()), Times.Once);
+    }
 }
