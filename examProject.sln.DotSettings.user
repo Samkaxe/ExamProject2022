@@ -3,10 +3,20 @@
 	<s:String x:Key="/Default/CodeInspection/PencilsConfiguration/FiltersState/=CodeStyle/@EntryIndexedValue">On</s:String>
 	<s:String x:Key="/Default/CodeInspection/PencilsConfiguration/FiltersState/=NamingFilter/@EntryIndexedValue">On</s:String>
 	<s:String x:Key="/Default/CodeInspection/PencilsConfiguration/FiltersState/=SpellingFilter/@EntryIndexedValue">On</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c4aebd67_002Dc1f4_002D4704_002Da784_002Dd807cf254b35/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ProductBrandServiceTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=0c7fda76_002D0bd1_002D41c6_002Da93d_002Db5d8d251e7d8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Session" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::BE0F28E6-CBAA-4394-9657-087631C0D8C2::net6.0::Application.Test.UploadServiceTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::BE0F28E6-CBAA-4394-9657-087631C0D8C2::net6.0::Application.Test.UploadTest.ShouldGetFilePathAfterSavingFileIntoWebRootPath&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::BE0F28E6-CBAA-4394-9657-087631C0D8C2::net6.0::Application.Test.UploadTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::BE0F28E6-CBAA-4394-9657-087631C0D8C2::net6.0::Application.Test.ProductTypeServiceTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c4aebd67_002Dc1f4_002D4704_002Da784_002Dd807cf254b35/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ProductBrandServiceTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::BE0F28E6-CBAA-4394-9657-087631C0D8C2::net6.0::Application.Test.ProductBrandServiceTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::BE0F28E6-CBAA-4394-9657-087631C0D8C2::net6.0::Application.Test.ProductServiceTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::BE0F28E6-CBAA-4394-9657-087631C0D8C2::net6.0::Application.Test.ProductTypeServiceTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::BE0F28E6-CBAA-4394-9657-087631C0D8C2::net6.0::Application.Test.UploadServiceTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
