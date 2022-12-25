@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "h0UDF7//kPh9hDeeK15+5a97QU5BAkdJ0RWQAvYPjBU=",
+  "Hash": "fFs7KvKrxYGeYNDYy29VmEJV/sekERQzFarRvZyXk1I=",
   "Source": "API",
   "BasePath": "_content/API",
   "Mode": "Default",
@@ -255,6 +255,40 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\belcanoFood2.jpg"
     },
     {
+      "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\car1_0ff9.png",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/products/car1_0ff9.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\car1_0ff9.png"
+    },
+    {
+      "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\ccna-introduction-to-networks_9ac1.png",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/products/ccna-introduction-to-networks_9ac1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\ccna-introduction-to-networks_9ac1.png"
+    },
+    {
       "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\checkup.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
@@ -425,6 +459,23 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\placeholder.png"
     },
     {
+      "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\windows_xp_original-wallpaper-1920x1080_0a84.jpg",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/products/windows_xp_original-wallpaper-1920x1080_0a84.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\windows_xp_original-wallpaper-1920x1080_0a84.jpg"
+    },
+    {
       "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\windows_xp_original-wallpaper-1920x1080_2307.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
@@ -440,6 +491,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\products\\windows_xp_original-wallpaper-1920x1080_2307.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\wp2231087-3440x1440-wallpapers_1e63.png",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/products/wp2231087-3440x1440-wallpapers_1e63.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\wp2231087-3440x1440-wallpapers_1e63.png"
     }
   ]
 }

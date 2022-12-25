@@ -5,6 +5,7 @@ using Application.Services;
 using Core.Interfaces;
 using FluentValidation;
 using Infrastructure.Data;
+using Infrastructure.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using StackExchange.Redis;
@@ -27,11 +28,18 @@ namespace API
         {
             services.AddAutoMapper(typeof(MappingProfiles));
             services.AddValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
-            services.AddApplicationServices();
-            
             services.AddControllers();
-            services.AddDbContext<StoreContext>(x => x.UseSqlite(_configuration.GetConnectionString("Default")));
+            services.AddApplicationServices();
+            services.AddIdentityServices(_configuration);
             
+            services.AddDbContext<StoreContext>(x => x.UseSqlite(_configuration.GetConnectionString("Default")));
+           
+            services.AddDbContext<AppIdentityDbContext>(x =>
+            {
+                x.UseSqlite(_configuration.GetConnectionString("Identity"));
+            });
+            
+            services.AddSwaggerDocs();
              services.AddSwaggerGen(c =>
              {
                  c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPIv5", Version = "v1" });
@@ -44,14 +52,9 @@ namespace API
                  return ConnectionMultiplexer.Connect(config);
              });
 
-             // services.AddCors(opt => {
-             //     opt.AddPolicy("CorsPolicy", policy => {
-             //         policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
-             //     });
-             // });
+            
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
