@@ -17,6 +17,33 @@ public class AccountController : BaseApiController
         _signInManager = signInManager;
     }
 
+    /*
+* {
+"errors": [
+   "The Email field is not a valid e-mail address.",
+   "The Password field is required."
+],
+"statusCode": 400,
+"message": "A bad request , you have made"
+}
+*/
+    
+    /*
+     *  "errors": [
+        "Email address is in use"
+    ],
+    "statusCode": 400,
+    "message": "A bad request , you have made"
+}
+     */
+    // Attempts a password sign in for a user.
+    //     Params:
+    // user – The user to sign in.
+    // password – The password to attempt to sign in with.
+    //     lockoutOnFailure – Flag indicating if the user account should be locked if the sign in fails.
+    //     Returns:
+    // The task object representing the asynchronous operation containing the for the sign-in attempt.
+
     [HttpPost("login")]
     public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
     {
@@ -26,14 +53,7 @@ public class AccountController : BaseApiController
         {
             return Unauthorized(new ApiResponse(401));
         }  
-        // Attempts a password sign in for a user.
-        //     Params:
-        // user – The user to sign in.
-        // password – The password to attempt to sign in with.
-        //     lockoutOnFailure – Flag indicating if the user account should be locked if the sign in fails.
-        //     Returns:
-        // The task object representing the asynchronous operation containing the for the sign-in attempt.
-        
+       
         var result = await _signInManager.CheckPasswordSignInAsync(user , loginDto.Password , false);
 
         if (!result.Succeeded)
@@ -41,25 +61,6 @@ public class AccountController : BaseApiController
             return Unauthorized(new ApiResponse(401));
             
         }
-        /*
-    * {
-   "errors": [
-       "The Email field is not a valid e-mail address.",
-       "The Password field is required."
-   ],
-   "statusCode": 400,
-   "message": "A bad request , you have made"
-}
-    */
-    
-        /*
-         *  "errors": [
-            "Email address is in use"
-        ],
-        "statusCode": 400,
-        "message": "A bad request , you have made"
-    }
-         */
         
         return new UserDto
         {
@@ -68,6 +69,27 @@ public class AccountController : BaseApiController
             DisplayName = user.DisplayName
         };
     }
+
+    [HttpPost("register")]
+    public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
+    {
+        var user = new AppUser {
+            DisplayName = registerDto.DisplayName,
+            Email = registerDto.Email,
+            UserName = registerDto.Email
+        };
+
+        var result = await _userManager.CreateAsync(user, registerDto.Password);
+        if (!result.Succeeded) { return BadRequest(new ApiResponse(400)); }
+
+        return new UserDto
+        {
+            DisplayName = user.DisplayName,
+            Token = "this is fake Token",
+            Email = user.Email
+        }; 
+    }
+
     /*
     * "email": "Alex@test.com",
    "displayName": "Alex",
