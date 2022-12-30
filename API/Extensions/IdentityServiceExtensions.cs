@@ -27,7 +27,8 @@ public static class IdentityServiceExtensions
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Token:Key"])),
                     ValidIssuer = configuration["Token:Issuer"],
                     ValidateIssuer = true,
-                    ValidateAudience = false
+                    ValidateAudience = false // unable to validate the token // bug in postman 
+                                            
                 };
             });
         

@@ -11,6 +11,7 @@ public static class ApplicatonServicesExtensions
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
+        services.AddScoped<ITokenService, TokenService>();
         services.AddScoped<IBasketRepository, BasketRepository>();
         
         services.AddScoped<IProductRepository, ProductRepository>();
@@ -21,6 +22,7 @@ public static class ApplicatonServicesExtensions
         
         services.AddScoped<ITypeRepository, TypeRepository>();
         services.AddScoped<ITypeService, ProductTypeService>();
+        
         services.AddTransient<IUploadService, UploadService>();
         services.Configure<ApiBehaviorOptions>(options =>
         {

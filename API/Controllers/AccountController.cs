@@ -1,6 +1,9 @@
-﻿using API.Errors;
+﻿using System.Security.Claims;
+using API.Errors;
 using Application.DTOs;
+using Application.Interfaces;
 using Core.Identity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,13 +13,45 @@ public class AccountController : BaseApiController
 {
     private readonly UserManager<AppUser> _userManager;
     private readonly SignInManager<AppUser> _signInManager;
+    private readonly ITokenService _tokenService;
 
-    public AccountController(UserManager<AppUser> userManager , SignInManager<AppUser> signInManager)
+    public AccountController(UserManager<AppUser> userManager , SignInManager<AppUser> signInManager , ITokenService tokenService)
     {
         _userManager = userManager;
         _signInManager = signInManager;
+        _tokenService = tokenService;
     }
 
+    [Authorize]
+    [HttpGet]
+    public async Task<ActionResult<UserDto>> GetCurrentUser()
+    {
+        // var email = HttpContext.User?.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Email)?
+        //     .Value;
+        var email = User.FindFirstValue(ClaimTypes.Email);
+        
+        var user = await _userManager.FindByEmailAsync(email);
+        
+        return new UserDto
+        {
+            Email = user.Email,
+            Token = _tokenService.CreateToken(user),
+            DisplayName = user.DisplayName
+        };
+    }
+
+    [HttpGet("emailexists")]
+    public async Task<ActionResult<bool>> CheckEmailIfExists(string email)
+    {
+        return await _userManager.FindByEmailAsync(email) != null;
+    }
+
+    // [HttpGet("adresss")]
+    // public async Task<ActionResult<Address>> GetUserAddress()
+    // {
+    //     return null;
+    // } 
+    
     /*
 * {
 "errors": [
@@ -65,7 +100,7 @@ public class AccountController : BaseApiController
         return new UserDto
         {
             Email = user.Email,
-            Token = "Tested fake Token",
+            Token = _tokenService.CreateToken(user),
             DisplayName = user.DisplayName
         };
     }
@@ -85,10 +120,12 @@ public class AccountController : BaseApiController
         return new UserDto
         {
             DisplayName = user.DisplayName,
-            Token = "this is fake Token",
+            Token = _tokenService.CreateToken(user),
             Email = user.Email
         }; 
     }
+    
+   
 
     /*
     * "email": "Alex@test.com",
