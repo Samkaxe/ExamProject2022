@@ -1,28 +1,36 @@
 ﻿# This workflow will build a .NET project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
-
+# The name of the workflow.
 name: .NET
 
+# Trigger this workflow on a push, or pull request to
+# the Develop branch, when either C# or project files changed
 on:
   push:
     branches: [ "Develop" ]
   pull_request:
     branches: [ "Develop" ]
-
+    
+# Defines a single job named "build"
 jobs:
   build:
-
+    # free and open-source Linux-based operating system you can use on a computer
     runs-on: ubuntu-latest
-
+    # Each job run contains these five steps
     steps:
+      # 1) Check out the source code so that the workflow can access it.
       - uses: actions/checkout@v3
+      # 2) Set up the .NET CLI environment for the workflow to use.
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 6.0.x
+      # 3) Restore the dependencies
       - name: Restore dependencies
         run: dotnet restore
+      # 4) Build a project or solution and all of its dependencies.
       - name: Build
         run: dotnet build --no-restore
+      # 5) Test a project or solution.
       - name: Test
         run: dotnet test --no-build --verbosity normal
