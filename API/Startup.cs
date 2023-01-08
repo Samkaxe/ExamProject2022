@@ -44,15 +44,19 @@ namespace API
              // {
              //     c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPIv5", Version = "v1" });
              // });
-
-             services.AddSingleton<IConnectionMultiplexer>(c =>
+            
+             services.AddSingleton<IConnectionMultiplexer>(c => 
+                 //this is the object that hides away the details of multiple servers
+                 // it is designed to be shared and reused between callers
+                 //It is fully thread-safe and ready for this usage
+                 // ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("localhost");
              {
+                 // setup the connection string of ridis , parse it 
+                 //"Redis" : "localhost"
                  var config = ConfigurationOptions.Parse(_configuration.GetConnectionString("Redis"),
                      true);
                  return ConnectionMultiplexer.Connect(config);
              });
-
-            
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

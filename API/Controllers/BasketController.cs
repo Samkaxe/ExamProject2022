@@ -13,8 +13,9 @@ public class BasketController : BaseApiController
         _repository = repository;
     }
     
-    [HttpGet]
+    [HttpGet] // Identifies an action that supports the HTTP GET method.
     public async Task<ActionResult<CustomerBasket>> GetBasketById(string Id)
+            // When multiple return types are possible, 
     {
         var basket = await _repository.GetBasket(Id);
         return Ok(basket ?? new CustomerBasket(Id));

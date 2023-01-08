@@ -31,6 +31,7 @@ public class TokenService : ITokenService
             // then we crypt the claims 
         var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature);
             // create token with the informantion provided 
+            //Contains some information which used to create a security token
         var token = new SecurityTokenDescriptor
         {
             Subject = new ClaimsIdentity(claims),
@@ -39,7 +40,7 @@ public class TokenService : ITokenService
             Issuer = _config["Token:Issuer"]
         };
 
-        var jwtToken = new JwtSecurityTokenHandler();
+        var jwtToken = new JwtSecurityTokenHandler(); //designed for creating and validating Json Web Tokens
 
         var tken = jwtToken.CreateToken(token);
 

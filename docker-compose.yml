@@ -1,14 +1,20 @@
 services:
-
+  # The presence of these objects is sufficient to define them
   redis:
+    #  latest version of redis 
     image: redis:latest
     ports:
+      # we want to run on this port 
       - 6379:6379
+      # we give it command to start inside the container 
     command: ["redis-server", "--appendonly", "yes"]
+   # inside the  docker container its gonna have space  available to store data 
     volumes:
       - redis-data:/data
-
+ # allow to see what we have inside the redis database 
+  # redily was expired 
   redis-commander:
+    # look over the redis above 
     image: rediscommander/redis-commander:latest
     environment:
       - REDIS_HOSTS=local:redis:6379

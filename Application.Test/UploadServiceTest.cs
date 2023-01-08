@@ -26,7 +26,8 @@ public class UploadServiceTest
         var request = GetSampleRequest();                                        //generating a dummy request
         await _service.SavePostImageAsync(request, "");                         //calling upload service method
         var expectedPath = Path.Combine("", "images", "products", fileName);    //gnerating expected path
-        True(request.ImagePath.StartsWith(expectedPath));                       //checking if result path is started with expected path (we did not use equal because uploaded file name is unique and generated dynamically)
+        True(request.ImagePath.StartsWith(expectedPath));                      
+        //checking if result path is started with expected path (we did not use equal because uploaded file name is unique and generated dynamically)
     }
 
 //this test is for ensure that uploaded file will be saved in server location

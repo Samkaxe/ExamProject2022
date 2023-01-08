@@ -35,7 +35,7 @@ namespace Infrastructure.Data.Migrations
                 {
                     table.PrimaryKey("PK_ProductTypes", x => x.Id);
                 });
-
+            // int are not null , strings are by default 
             migrationBuilder.CreateTable(
                 name: "Products",
                 columns: table => new

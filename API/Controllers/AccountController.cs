@@ -2,6 +2,7 @@
 using API.Errors;
 using Application.DTOs;
 using Application.Interfaces;
+using Core.Entities;
 using Core.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -11,8 +12,8 @@ namespace API.Controllers;
 
 public class AccountController : BaseApiController
 {
-    private readonly UserManager<AppUser> _userManager;
-    private readonly SignInManager<AppUser> _signInManager;
+    private readonly UserManager<AppUser> _userManager; // find the email 
+    private readonly SignInManager<AppUser> _signInManager; // to check the signing password and user  
     private readonly ITokenService _tokenService;
 
     public AccountController(UserManager<AppUser> userManager , SignInManager<AppUser> signInManager , ITokenService tokenService)
@@ -22,14 +23,14 @@ public class AccountController : BaseApiController
         _tokenService = tokenService;
     }
 
-    [Authorize]
+    [Authorize] //Specifies that the class or method that this attribute is applied to requires the specified authorization.
     [HttpGet]
     public async Task<ActionResult<UserDto>> GetCurrentUser()
     {
         // var email = HttpContext.User?.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Email)?
         //     .Value;
         var email = User.FindFirstValue(ClaimTypes.Email);
-        
+                    // we have access to the httpContext by nature 
         var user = await _userManager.FindByEmailAsync(email);
         
         return new UserDto
@@ -77,10 +78,12 @@ public class AccountController : BaseApiController
     [HttpPost("register")]
     public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
     {
-        var user = new AppUser {
+        //check the database schema 
+        var user = new AppUser {  
             DisplayName = registerDto.DisplayName,
             Email = registerDto.Email,
             UserName = registerDto.Email
+           // PhoneNumber = registerDto.Email
         };
 
         var result = await _userManager.CreateAsync(user, registerDto.Password);

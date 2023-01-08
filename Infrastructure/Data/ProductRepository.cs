@@ -17,8 +17,9 @@ public class ProductRepository : IProductRepository
     {
         return await _context.Products
             .Include(p => p.ProductType)
-            .Include(p => p.ProductBrand)
+            .Include(p => p.ProductBrand)//Specifies related entities to include in the query results.
             .FirstOrDefaultAsync(p => p.Id == id);
+          //Asynchronously returns the first element of a sequence that satisfies a specified condition or a default value if no such element is found.
     }
 
     public async Task<IReadOnlyList<Product>> GetProductsAsync()
@@ -26,7 +27,7 @@ public class ProductRepository : IProductRepository
         return await _context.Products
             .Include(p => p.ProductType)
             .Include(p => p.ProductBrand)
-            .ToListAsync();
+            .ToListAsync();//Asynchronously creates a List<T> from an IQueryable<out T> by enumerating it asynchronously.
     }
 
     public Product CreateNewProduct(Product product)

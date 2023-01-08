@@ -14,6 +14,9 @@ namespace API
 
            using (var scope = host.Services.CreateScope())
            {
+               /*
+                * a factory interface that we can use to create instances of the ILogger type and register logging providers
+                */
                var services = scope.ServiceProvider;
 
                var loggerFactory = services.GetRequiredService<ILoggerFactory>();
