@@ -56,7 +56,7 @@ export class AdminService {
     return this.http.delete(this.baseUrl + 'types/' + id);
   }
 
-  upload(file: File) {
+  upload(file: File) { //
     const formData: FormData = new FormData();
     formData.append('image', file);
     formData.append('ImagePath',file.name    )

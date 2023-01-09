@@ -28,7 +28,7 @@ export class ShopComponent implements OnInit {
   public sortValue: string = this.alphabetic;
 
   @Output()
-  searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
+  searchTextChanged: EventEmitter<string> = new EventEmitter<string>(); // to emit custom events synchronously or asynchronously,
 
   constructor(private shopService: ShopService) {
   }
@@ -104,7 +104,6 @@ export class BrandFilterPipePipe implements PipeTransform {
     if (!selectedBrand) return products
     return products.filter(item => item.productBrand === selectedBrand.name);
   }
-
 }
 
 @Pipe({name: 'typeFilter'})
@@ -112,6 +111,7 @@ export class TypeFilterPipe implements PipeTransform {
   transform(products: IProduct[], selectedType: IType): IProduct[] {
     if (!selectedType) return products
     return products.filter(item => item.productType === selectedType.name);
+    //creates a new array with all elements that pass the test implemented by the provided function.
   }
 
 }

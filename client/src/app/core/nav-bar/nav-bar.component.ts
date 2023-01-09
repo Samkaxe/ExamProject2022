@@ -12,7 +12,7 @@ export class NavBarComponent implements OnInit {
 
   basket$ : Observable<IBasket>;
 
-  constructor(private http : BasketService) { }
+  constructor(private http : BasketService) { } // increment the number on the basket logo :D
 
   ngOnInit(): void {
     this.basket$ =this.http.basket$;

@@ -10,16 +10,16 @@ import {IProduct} from "../shared/models/product";
 })
 export class BasketService {
   baseUrl = environment.apiUrl;
-  private basketSource = new BehaviorSubject<IBasket>(null);
-  basket$ = this.basketSource.asObservable();
+  private basketSource = new BehaviorSubject<IBasket>(null); // A variant of Subject emits its current value whenever it is subscribed to.
+  basket$ = this.basketSource.asObservable(); // i want to be able to subscribe using the async pipe in order to get the value
 
   constructor(private http : HttpClient) { }
 
   getBasket(id : string){
-    return this.http.get(this.baseUrl + 'basket?id=' + id)
-      .pipe(
-        map((basket : IBasket) => {
-          this.basketSource.next(basket);
+    return this.http.get(this.baseUrl + 'basket?id=' + id) //concatenate the ID
+      .pipe( // so can use if rsjs oprator
+        map((basket : IBasket) => { // map the basket
+          this.basketSource.next(basket); // next : set the behavior subject to set the value
           console.log(this.getCurrentBasketValue());
         })
       );
@@ -46,23 +46,24 @@ export class BasketService {
   this.setBasket(basket);
   }
 
+  //
   private addUpdateItem(items: IBaskettem[], itemToAdd: IBaskettem, quantity: number) : IBaskettem[] {
     console.log(items);
-    const index = items.findIndex(i => i.id === itemToAdd.id)
-    if(index === -1){
-      itemToAdd.quantity = quantity ;
-      items.push(itemToAdd);
+    const index = items.findIndex(i => i.id === itemToAdd.id) //
+    if(index === -1){ // if the index was not found
+      itemToAdd.quantity = quantity ; // add the first itemtoadd
+      items.push(itemToAdd); // dds one or more elements to the end of the array
     }
     else {
      // items [index].quantity = ++quantity ;
-      items [index].quantity += quantity ;
+      items [index].quantity += quantity ;  // if the index already exists we just increment ,
     }
     return items ;
   }
 
   private createBasket() : IBasket {
   const basket = new Basket();
-  localStorage.setItem('basket_id' , basket.id);
+  localStorage.setItem('basket_id' , basket.id); // give us some level of prisiting as long as the user dont close the broswer
 
   return basket;
   }

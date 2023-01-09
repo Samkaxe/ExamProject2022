@@ -4,12 +4,12 @@ import {IProduct} from "../shared/models/product";
 import {IBrand} from "../shared/models/brand";
 import {IType} from "../shared/models/productType";
 
-@Injectable({
+@Injectable({ //Decorator that marks a class as available to be provided and injected as a dependency.
   providedIn: 'root'
 })
 export class ShopService {
   baseUrl ='https://localhost:5001/api/';
-  constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient) { } //This service is available as an injectable class
 
 
   getProducts(){

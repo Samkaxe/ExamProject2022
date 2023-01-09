@@ -16,7 +16,7 @@ export interface IBaskettem {
 }
 
 export class Basket implements  IBasket{
-  id = uuidv4();
+  id = uuidv4(); // providde unique identifier
   items: IBaskettem[] = [];
 
 }

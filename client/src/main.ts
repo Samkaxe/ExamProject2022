@@ -3,7 +3,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
-
+// this class this is what's responsible for bootstrapping our app module and generating our angular application
 if (environment.production) {
   enableProdMode();
 }

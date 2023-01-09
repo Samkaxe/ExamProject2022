@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fFs7KvKrxYGeYNDYy29VmEJV/sekERQzFarRvZyXk1I=",
+  "Hash": "YuyHWOZgKDw3G+aM41Lxv1qkMlezoZY/Lp0NYduBPpE=",
   "Source": "API",
   "BasePath": "_content/API",
   "Mode": "Default",
@@ -253,6 +253,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\products\\belcanoFood2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\bmwr65_1_929f.jpg",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\charl\\examProject\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/products/bmwr65_1_929f.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\bmwr65_1_929f.jpg"
     },
     {
       "Identity": "C:\\Users\\charl\\examProject\\API\\wwwroot\\images\\products\\car1_0ff9.png",

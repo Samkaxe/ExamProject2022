@@ -1,0 +1,38 @@
+﻿ngx bootstrap provide us with style sheet to make our application look nicer
+
+ng-bootstrap uses an object, but ngx-bootstrap will take a string which is way easier to use.
+
+angular
+single page application framework
+A component-based framework for building scalable web applications
+
+8 Advantages of Angular for Businesses and Developers
+Faster Development Process.
+Readable and Testable Code.
+More Lightweight Web Applications.
+Efficient Problem-Solving Patterns.
+Excellent Material Design Library.
+
+What is Node. js (Node)?
+Node. js (Node) is an open source, cross-platform runtime environment for executing JavaScript code.
+
+RouterLink
+When applied to an element in a template, makes that element a link that initiates navigation to a route.
+
+CurrencyPipe
+PIPE
+Transforms a number to a currency string, formatted according to locale
+rules that determine group sizing and separator, decimal-point character, and other locale-specific configurations.
+
+Clean architecture
+is a software design philosophy that separates the elements of a design into ring levels
+
+Principles of Clean Architecture
+
+Independent of any framework
+layers must be so well separated that they can survive individually, without the need for externals.
+
+Testable
+each layer can be tested individually
+
+Possibility of changes

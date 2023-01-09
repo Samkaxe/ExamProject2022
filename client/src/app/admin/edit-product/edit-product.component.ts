@@ -28,7 +28,11 @@ export class EditProductComponent implements OnInit {
   ngOnInit(): void {
     const brands = this.getBrands();
     const types = this.getTypes();
-
+  // We then pass these in an array to the forkJoin method and then subscribe.
+  // This stores the results in an array that we can access using the index of the results array.
+  // The types will be in results[0] as this is the first observable passed to the method, and the brands are in results[1].
+  // If this method is successful we can then go and fetch the product in the ‘complete’ part of the subscribe method, and make use of the returned types so that we can get the brand id and type id and assign them to the product – we do this as the API is returning the type and brand as just the string of the name, but when we edit or create a product we want to use the id instead.
+  // We also check here to make sure we are editing the product as we do not want to load a product if we are creating a new one so we add an if statement to check.
     forkJoin([types, brands]).subscribe(results => {
       this.types = results[0];
       this.Brands = results[1];
@@ -50,7 +54,7 @@ export class EditProductComponent implements OnInit {
   updatePrice(event: any) {
     this.product.price = event;
   }
-
+  //The spread syntax ,,, combine the elements into one object
   loadProduct() {
     this.adminService.get(+this.route.snapshot.paramMap.get('id')).subscribe((response: any) => {
       const productBrandId = this.Brands && this.Brands.find(x => x.name === response.productBrand).id;
@@ -71,7 +75,6 @@ export class EditProductComponent implements OnInit {
     if (!product.pictureUrl) {
       console.log(product);
       return;
-
     }
 
     if (this.route.snapshot.url[0].path === 'edit') {

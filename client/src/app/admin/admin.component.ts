@@ -31,7 +31,7 @@ export class AdminComponent implements OnInit {
   deleteProduct(id: number) {
     this.adminService.deleteProduct(id).subscribe((makita: any) => {
       this.products.splice(this.products.findIndex(p => p.id === id), 1);
-
+    //method changes the contents of an array by removing or replacing existing elements and/or adding new elements
     });
   }
 
