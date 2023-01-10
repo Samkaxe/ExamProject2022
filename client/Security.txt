@@ -1,0 +1,26 @@
+﻿
+what is certificate :  elctronic docs that contain data field
+                      it provide method to check the identity
+
+Authentication is the process of determining a user's identity.
+Authorization is the process of determining whether a user has access to a resource.
+
+Authentication schemes are specified by registering authentication services
+By calling a scheme-specific extension method after a call to AddAuthentication
+(such as AddJwtBearer
+
+
+Authentication , we use identity aso.net Core
+
+order is required like this
+  app.UseAuthentication();
+    app.UseAuthorization();
+
+[Authorize]  limits access to that component to authenticated users.
+AllowAnonymous   allow access by non-authenticated users to individual actions
+[Authorize(Roles = "Administrator")] give a role to
+
+authguard : router feature prevent us from activiating certain route like the checlout
+
+ what is json : JSON Object which is used to securely transfer information over the web(between two parties)
+

@@ -11,6 +11,7 @@ public class PostProductValidator : AbstractValidator<ProductToCreateDTO>
     public PostProductValidator()
     {
         RuleFor(p => p.Price).GreaterThan(0);
+      // this.RuleFor('price').matches(new RegExp('^([0-9])+.([0-9]){2}$'));
         RuleFor(p => p.Name).NotEmpty();
         RuleFor(p => p.Description).NotEmpty().MaximumLength(500);
         RuleFor(p => p.ProductBrandId).NotNull().WithMessage("you must select Brand");

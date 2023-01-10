@@ -1,19 +1,23 @@
 <div class="row">
   <div class="col-8">
     <label class="btn btn-default p-0">
+      <!--      this input only accept image files and show them in file browser and selectFile function will run if a file selected-->
       <input type="file" accept="image/*" (change)="selectFile($event)">
     </label>
   </div>
-<!--  <div class="col-4">-->
-<!--    <button type="button" class="btn btn-success btn-sm float-right" [disabled]="!selectedFiles" (click)="upload()">Upload</button>-->
-<!--  </div>-->
+
 </div>
 <div>
+  <!--  if preview does not have any value we show nothing -->
+  <!--  but if preview has value and selected files has value we will show preview in image source because we are showing the local file-->
+  <!--  but if selectedFiles does not have value we will show ServerUrl+preview for image source because we are showing the server file-->
   <img [src]="!preview?'':selectedFiles?preview: baseServerUrl+preview" class="preview">
 </div>
 <div class="progress my-3" *ngIf="currentFile && progress">
+  <!--  this line show uploading progress bar-->
   <div class="progress-bar progress-bar-info" role="progressbar" attr.aria-valuenow="{{progress}}" aria-valuemin="0"
        aria-valuemax="100" [ngStyle]="{width:progress+'%'}">{{progress}}</div>
 </div>
+<!--if there is an error message below line would show that message-->
 <div *ngIf="message" class="alert alert-secondary" role="alert">{{message}}</div>
 

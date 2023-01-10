@@ -10,17 +10,17 @@ import {environment} from "../../../environments/environment";
   styleUrls: ['./image-upload.component.scss']
 })
 export class ImageUploadComponent implements OnInit {
-  @Input() preview = '';
-  @Output() uploadEvent = new EventEmitter<string>();
+  @Input() preview = '';    //for getting preview from parent component (edit-product component)
+  @Output() uploadEvent = new EventEmitter<string>();     //for send message to parent compenent
 
-  selectedFiles?: FileList;
+  selectedFiles?: FileList;  //this will contain selected files for upload
   currentFile?: File;
   progress = 0;
   message = '';
   // preview = '';
   uploaded = false;
   imageInfos?: Observable<any>;
-  baseServerUrl = environment.serverUrl;
+  baseServerUrl = environment.serverUrl;      //server url
 
   constructor(private uploadService: AdminService) {
   }
@@ -32,18 +32,18 @@ export class ImageUploadComponent implements OnInit {
     this.message = '';
     this.preview = '';
     this.progress = 0;
-    this.selectedFiles = event.target.files;
-    if (this.selectedFiles) {
-      const file: File | null = this.selectedFiles.item(0);
-      if (file) {
+    this.selectedFiles = event.target.files;      //get selected file in open dialog
+    if (this.selectedFiles) {                   //if user has selected any file
+      const file: File | null = this.selectedFiles.item(0);     //get first item of selected files
+      if (file) {         //if first item is valid
         this.preview = '';
-        this.currentFile = file;
-        const reader = new FileReader();
+        this.currentFile = file;    //put it in currentFile variable
+        const reader = new FileReader(); //create a file reader to read the local file to preview
         reader.onload = (e: any) => {
-          this.preview = e.target.result;
+          this.preview = e.target.result;     //put file content in preview to show a preivew in image upload compoentn
         };
-        reader.readAsDataURL(this.currentFile);
-        this.upload();
+        reader.readAsDataURL(this.currentFile);  //reader reads all file data to preview
+        this.upload();      //starting upload
       }
     }
   }
@@ -54,13 +54,14 @@ export class ImageUploadComponent implements OnInit {
       const file: File | null = this.selectedFiles.item(0);
       if (file) {
         this.currentFile = file;
-        this.uploadService.upload(this.currentFile).subscribe({
+        this.uploadService.upload(this.currentFile).subscribe({     //call upload method from uploadservice to uploading currentFile
           next: (event: any) => {
+            //the result would be either progress or upload response and we checked if result is progress then we show the value in progress bar
             if (event.type === HttpEventType.UploadProgress) {
               this.progress = Math.round((100 * event.loaded) / event.total);
-            } else if (event instanceof HttpResponse) {
+            } else if (event instanceof HttpResponse) {     //if result would be response that means opreation is finished and image is uploaded or failed
               this.message = event.body.message;
-              if (event.body.imagePath) {
+              if (event.body.imagePath) {     //if uploading was successfull we should have image path in response body then we use it
                 this.uploaded = true;
                 this.uploadEvent.emit(event.body.imagePath)
               }

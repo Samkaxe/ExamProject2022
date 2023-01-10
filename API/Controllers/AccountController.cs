@@ -22,7 +22,17 @@ public class AccountController : BaseApiController
         _signInManager = signInManager;
         _tokenService = tokenService;
     }
-
+        
+    /*
+     *  "email": "Alex@test.com",
+    "displayName": "Alex",
+    "token": 
+    "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.
+    eyJlbWFpbCI6IkFsZXhAdGVzdC5jb20iLCJnaXZlbl9uYW1lIjoiQWxleCIs
+    Im5iZiI6MTY3MzM1MTc4OCwiZXhwIjoxNjczOTU2NTg4LCJpYXQiOjE2NzMzNTE3ODgsImlzcyI
+    6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.ILR4WZyHVSYmheGWMTnUboCV91UsG96GKpA3Bq4
+    fBVfpGYWzgwUCLqdf5g_SOLJyNLsCIkVkCykO6f22WBHz2g"
+     */
     [Authorize] //Specifies that the class or method that this attribute is applied to requires the specified authorization.
     [HttpGet]
     public async Task<ActionResult<UserDto>> GetCurrentUser()
@@ -40,15 +50,18 @@ public class AccountController : BaseApiController
             DisplayName = user.DisplayName
         };
     }
-
+        //
+        /*
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+          eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.
+          SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+         */
     [HttpGet("emailexists")]
     public async Task<ActionResult<bool>> CheckEmailIfExists(string email)
     {
         return await _userManager.FindByEmailAsync(email) != null;
     }
-
-   
-
+    
     [HttpPost("login")]
     public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
     {
@@ -98,6 +111,52 @@ public class AccountController : BaseApiController
     }
     
    
+    //  [HttpPost("register")]
+    // public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
+    // {
+    //     if (await UserExists(registerDto.Username)) return BadRequest("User Name is Taken");
+    //     
+    //     using var hmac = new HMACSHA512();
+    //     var user = new AppUser
+    //     {
+    //         UserName = registerDto.Username.ToLower() , 
+    //         PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)) ,
+    //         PasswordSalt = hmac.Key
+    //     };
+    //
+    //     _context.Users.Add(user);
+    //     await _context.SaveChangesAsync();
+    //     return new UserDto
+    //     {
+    //         Username = user.UserName ,
+    //         Token = _tokenService.CreateToken(user)
+    //     };
+    // }
+    //
+    // [HttpPost("login")]
+    // public async Task<ActionResult<UserDto>> Login(LoginDTO loginDto)
+    // {
+    //     var user = await _context.Users.SingleOrDefaultAsync(z => z.UserName == loginDto.Username);
+    //
+    //     if (user == null) return Unauthorized("Invalid sername");
+    //
+    //     using var hmac = new HMACSHA512(user.PasswordSalt);
+    //
+    //     var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password)); // get the cumputed hash of this bite array 
+    //
+    //     for (int i = 0; i < computedHash.Length; i++)
+    //     {
+    //         if (computedHash[i] != user.PasswordHash[i]) return Unauthorized("Invalid password ");
+    //         
+    //     }
+    //
+    //     return new UserDto
+    //     {
+    //         Username = user.UserName ,
+    //         Token = _tokenService.CreateToken(user)
+    //     };
+    // }
+    
 
  
 }

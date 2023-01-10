@@ -29,6 +29,7 @@ export class EditProductComponent implements OnInit {
     const brands = this.getBrands();
     const types = this.getTypes();
   // We then pass these in an array to the forkJoin method and then subscribe.
+  // A callback method that is invoked immediately after the default change detector has checked
   // This stores the results in an array that we can access using the index of the results array.
   // The types will be in results[0] as this is the first observable passed to the method, and the brands are in results[1].
   // If this method is successful we can then go and fetch the product in the ‘complete’ part of the subscribe method, and make use of the returned types so that we can get the brand id and type id and assign them to the product – we do this as the API is returning the type and brand as just the string of the name, but when we edit or create a product we want to use the id instead.
@@ -36,6 +37,10 @@ export class EditProductComponent implements OnInit {
     forkJoin([types, brands]).subscribe(results => {
       this.types = results[0];
       this.Brands = results[1];
+      /*
+      This operator is best used when you have a group of observables and only care about the final emitted value of each.
+      One common use case for this is if you wish to issue multiple requests on page load
+       */
     }, error => {
       console.log(error);
     }, () => {

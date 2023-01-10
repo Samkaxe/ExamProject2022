@@ -56,13 +56,13 @@ export class AdminService {
     return this.http.delete(this.baseUrl + 'types/' + id);
   }
 
-  upload(file: File) { //
-    const formData: FormData = new FormData();
-    formData.append('image', file);
+  upload(file: File) {
+    const formData: FormData = new FormData();        //for upload we should create a form data and append items to it
+    formData.append('image', file);    //appending fields to form data
     formData.append('ImagePath',file.name    )
-    const req = new HttpRequest('POST', `${this.baseUrl}upload`, formData, {
-      reportProgress: true,
-      responseType: 'json'
+    const req = new HttpRequest('POST', `${this.baseUrl}upload`, formData, {  //sending upload request with post method
+      reportProgress: true,     //determines to get upload progress
+      responseType: 'json'    //determines response type
     });
     return this.http.request(req);
   }

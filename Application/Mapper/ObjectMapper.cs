@@ -4,7 +4,7 @@ using AutoMapper;
 using Core.Entities;
 
 namespace Application.Mapper;
-
+//Provides a named configuration for maps. Naming conventions become scoped per profile.
 public static class ObjectMapper
 {
     private static readonly Lazy<IMapper> Lazy = new Lazy<IMapper>(() =>

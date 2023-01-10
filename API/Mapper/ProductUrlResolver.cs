@@ -13,7 +13,7 @@ public class ProductUrlResolver :IValueResolver<Product , ProductToReturnDto , s
     {
         _config = config;
     }
-
+        //Implementors use source object to provide a destination object 
     // this class was created to solve the issue with the pictureUrl that cant be send via the client 
     public string Resolve(Product source, ProductToReturnDto destination, string destMember, ResolutionContext context)
     {

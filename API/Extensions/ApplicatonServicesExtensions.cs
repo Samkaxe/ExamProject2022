@@ -40,7 +40,7 @@ public static class ApplicatonServicesExtensions
         services.AddTransient<IUploadService, UploadService>();
         
         // override the behavior of the controller attribute 
-        // one or more validations acoure so it help me to find where is the error 
+        // one or more validations accoure so it help me to find where is the error 
         services.Configure<ApiBehaviorOptions>(options =>
         {
             options.InvalidModelStateResponseFactory = actionContext =>
