@@ -36,3 +36,34 @@ Testable
 each layer can be tested individually
 
 Possibility of changes
+
+
+angular directive
+Structural Directives are directives which change the structure of the DOM by adding or removing elements.
+
+There are three built-in structural directives, NgIf, NgFor and NgSwitch.
+[ngSwitch] directive on a container specifies an expression to match against.
+
+
+attribute directive
+
+NgClass  Adds and removes CSS classes on an HTML element.
+ngModel directive is a directive that is used to bind the values of the HTML controls (input, select, and textarea
+ngSubmit specifies a function to run when the form is submitted
+Form groups wrap a collection of form controls.  Just as the control gives you access to the state of an element
+
+
+two way binding
+Two-way data binding in Angular will help users to exchange data from the component
+to view and from view to the component. It will help users to establish communication
+bi-directionally.
+
+one-way binding
+One-way data binding will bind the data from the component to the view (DOM)
+or from view to the component. One-way data binding is unidirectional.
+You can only bind the data from component to the view or from view to the component.
+
+#name = 'ngmodel'  template refernce value
+
+
+[routerLinkActiveOptions]  Options to configure how to determine if the router link is active

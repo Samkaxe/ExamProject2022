@@ -18,7 +18,7 @@ public class UploadService : IUploadService
         uploadRequest.ImagePath = filePath;
     }
     
-//this method generates a response object from input request and add a success field to response and set image path with relative address
+    //this method generates a response object from input request and add a success field to response and set image path with relative address
     public async Task<UploadResponse> CreatePostAsync(UploadRequest postRequest)
     {
         return new UploadResponse

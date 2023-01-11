@@ -24,3 +24,7 @@ authguard : router feature prevent us from activiating certain route like the ch
 
  what is json : JSON Object which is used to securely transfer information over the web(between two parties)
 
+
+Hashing takes plaintext data elements and converts them into consistent ciphertext outputs used for data verification.
+ Salting adds random characters to data, like passwords, to thwart hackers who look for consistent words and phrases
+ in sensitive data in order to decode it.
